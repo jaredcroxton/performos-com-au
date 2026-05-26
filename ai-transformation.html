@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transformation for Small Business | PerformOS</title>
+  <meta name="description" content="PerformOS helps Australian small businesses adopt AI safely. We assess your operation, design agent architecture, train your team, build workflows, and stay until it ships. Not consulting decks. Real transformation.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="AI Transformation for Small Business | PerformOS">
+  <meta property="og:description" content="PerformOS helps Australian small businesses adopt AI safely. We assess your operation, design agent architecture, train your team, build workflows, and stay until it ships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/ai-transformation.html">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/ai-transformation.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
+    h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
+    h4 { font-family: var(--serif); font-weight: 400; font-size: 20px; letter-spacing: -0.2px; line-height: 1.2; }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+    .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* HERO */
+    .hero { padding: 80px 0 56px; }
+    .hero h1 { max-width: 900px; }
+    .hero .intro { font-size: 18px; color: var(--ink-60); line-height: 1.6; margin-top: 24px; max-width: 660px; }
+    .hero .hero-subhead { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1.2; margin-top: 20px; max-width: 720px; }
+    .hero .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+    /* SECTION */
+    .section { padding: 72px 0; }
+    .section-alt { background: var(--ivory-soft); }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .section-intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 14px; max-width: 620px; }
+
+    /* PROCESS STEPS */
+    .process { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+    .process-step {
+      display: grid; grid-template-columns: 80px 1fr; gap: 28px; align-items: start;
+      padding: 32px 0; border-bottom: 1px solid var(--ink-12);
+    }
+    .process-step:first-child { padding-top: 0; }
+    .process-num { font-family: var(--mono); font-size: 14px; letter-spacing: 0.5px; color: var(--ink-40); padding-top: 2px; }
+    .process-body h3 { font-size: 22px; margin-bottom: 10px; }
+    .process-body p { font-size: 15px; color: var(--ink-60); line-height: 1.65; max-width: 600px; }
+
+    /* DONT LIST */
+    .dont-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; max-width: 720px; }
+    .dont-item {
+      display: flex; gap: 14px; align-items: baseline;
+      padding: 16px 20px; border-radius: 12px; background: var(--ivory);
+      border: 1px solid var(--ink-12);
+    }
+    .dont-item strong { font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .dont-item span { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+
+    /* FRAMEWORK */
+    .framework { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+    .framework-card { padding: 28px; border-radius: 14px; border: 1px solid var(--ink-12); background: var(--ivory); }
+    .framework-card h4 { margin-bottom: 10px; }
+    .framework-card p { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+
+    /* CUSTOM AGENTS */
+    .agents-block p { font-size: 16px; color: var(--ink-60); line-height: 1.65; margin-top: 16px; max-width: 680px; }
+
+    /* AUDIENCE */
+    .audience-list { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .audience-item {
+      display: flex; gap: 14px; align-items: baseline;
+      font-size: 16px; color: var(--ink-60); line-height: 1.6;
+    }
+    .audience-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 9px; }
+
+    /* CTA BAND */
+    .cta-band {
+      margin-top: 64px; background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .cta-band h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .hero { padding: 48px 0 32px; }
+      .hero h1 { font-size: 36px; }
+      .hero .intro { font-size: 16px; }
+      .hero .hero-subhead { font-size: 18px; }
+      .section { padding: 48px 0; }
+      .process-step { grid-template-columns: 50px 1fr; gap: 16px; padding: 24px 0; }
+      .process-num { font-size: 12px; }
+      .process-body h3 { font-size: 20px; }
+      .framework { grid-template-columns: 1fr; gap: 16px; }
+      .framework-card { padding: 22px; }
+      .dont-item { flex-direction: column; gap: 4px; }
+      .cta-band { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; margin-top: 48px; border-radius: 16px; }
+      .cta-band h2 { font-size: 26px; }
+      .cta-band .cta-row { justify-content: flex-start; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://performos.com.au/ai-transformation.html#service",
+    "name": "AI Transformation for Small Business",
+    "description": "PerformOS helps Australian small businesses adopt AI safely. We assess your operation, design agent architecture, train your team, build workflows, and stay until it ships.",
+    "provider": { "@id": "https://performos.com.au/#organization" },
+    "serviceType": "AI Transformation",
+    "areaServed": { "@type": "Country", "name": "AU" },
+    "offers": {
+      "@type": "Offer",
+      "description": "Fixed-price implementation sprints. Custom agents. Safe adoption framework. Post-launch support included for 90 days."
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX");
+  </script>
+
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="ai-transformation.html" class="current">Transformation</a></li>
+        <li><a href="ai-implementation.html">Implementation</a></li>
+        <li><a href="ai-fluency-workshop.html">Workshop</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>AI transformation<br><em>for small business.</em></h1>
+      <p class="hero-subhead">Safe adoption. Real workflows. No consulting circus.</p>
+      <p class="intro">Most AI transformation programmes are built for enterprises. Steering committees. Six-month discovery phases. PowerPoint decks that cost more than your annual software budget. Small businesses do not need any of that. They need someone who shows up, understands how they actually work, and builds something that removes friction by the end of the month.</p>
+      <p class="intro" style="margin-top:12px;">That is what PerformOS does.</p>
+      <div class="cta-row">
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start the conversation</a>
+        <a href="ai-fluency-workshop.html" class="btn btn-ghost">Start with a workshop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section section-alt" id="how-we-work">
+    <div class="wrap-narrow">
+      <span class="section-label">How we work</span>
+      <h2>Five steps. Fixed price. Real results.</h2>
+      <div class="process">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-body">
+            <h3>We assess</h3>
+            <p>One conversation. We look at your operation: what tasks consume the most time, where decisions get stuck, what data sits in five different places. We map the friction points you already feel but have not named. No consulting deck. A one-page friction map you can read in five minutes.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-body">
+            <h3>We design</h3>
+            <p>We design the agent architecture. Which tasks go to AI. Which stay with people. Where the handoff happens. How the workflows connect. We design for safety: clear boundaries, human review points, outputs you can inspect before they ship. No black boxes. No "trust the algorithm."</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-body">
+            <h3>We train</h3>
+            <p>Your team needs to know how to work alongside AI. Not how to code. How to prompt. How to review. How to override. When to trust the output and when to challenge it. We run the AI Fluency Workshop -- half-day, on-site or remote -- and your team leaves with a working instrument configured for your actual business.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <div class="process-body">
+            <h3>We build</h3>
+            <p>Four-week implementation sprint. Fixed scope. Fixed price. We build the agents, configure the workflows, connect the instruments, and ship them into production. Your team is using AI on real work by the end of week four. Not piloting. Not testing. Shipping.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-num">05</div>
+          <div class="process-body">
+            <h3>We stay</h3>
+            <p>Most consultants leave when the project ends. We stay. Your instruments are owned, not rented. Your workflows are documented. Your team is trained. And we are still here if something breaks, if you need something new, or if you just want to talk through whether a new AI instrument is worth adopting. Post-launch support is included for 90 days after your instrument ships. After that, support is available at studio rates -- no retainer, no lock-in.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO NOT DO -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">What we do not do</span>
+      <h2>Clear boundaries. No surprises.</h2>
+      <div class="dont-list">
+        <div class="dont-item">
+          <strong>We do not sell subscriptions.</strong>
+          <span>Every instrument is a one-time purchase. Owned forever.</span>
+        </div>
+        <div class="dont-item">
+          <strong>We do not over-engineer.</strong>
+          <span>Each instrument does one job surgically. No bloated dashboards.</span>
+        </div>
+        <div class="dont-item">
+          <strong>We do not write reports nobody reads.</strong>
+          <span>Deliverables are working instruments, not PDFs.</span>
+        </div>
+        <div class="dont-item">
+          <strong>We do not lock you in.</strong>
+          <span>Your data. Your workflows. Your instruments. No vendor dependency.</span>
+        </div>
+        <div class="dont-item">
+          <strong>We do not over-automate.</strong>
+          <span>Some tasks should stay with people. We tell you which ones.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFE AI FRAMEWORK -->
+  <section class="section section-alt" id="framework">
+    <div class="wrap">
+      <span class="section-label">Safe AI adoption framework</span>
+      <h2>Adoption is about people, not technology.</h2>
+      <p class="section-intro">Bringing AI into a small business is not about technology. It is about people. The risk is not that the AI fails. The risk is that the team does not trust it, does not know how to use it, or uses it in ways that create liability. We work to a simple framework.</p>
+      <div class="framework">
+        <div class="framework-card">
+          <h4>Boundaries first</h4>
+          <p>Define what AI can touch and what it cannot. Customer data? Financial decisions? Employment decisions? Legal advice? Each gets a clear rule before any instrument is configured.</p>
+        </div>
+        <div class="framework-card">
+          <h4>Human review built in</h4>
+          <p>Every AI output has a human checkpoint before it ships. The instrument drafts. The operator decides. This is permanent system design, not a temporary training period. Pocket Customer shows every call scorecard fully inspectable before it counts.</p>
+        </div>
+        <div class="framework-card">
+          <h4>Team fluency before tool adoption</h4>
+          <p>We train your team before we deploy instruments. A trained team gets value from almost any tool. An untrained team will be paralysed by the best tools on the market.</p>
+        </div>
+        <div class="framework-card">
+          <h4>Start small, ship fast, compound</h4>
+          <p>One workflow. One instrument. One team. Ship it. Measure it. Then expand. Organisational transformation is not a big bang. It is compound tempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM AGENTS -->
+  <section class="section" id="custom-agents">
+    <div class="wrap-narrow">
+      <span class="section-label">Custom agents</span>
+      <h2>Instruments built for your operation.</h2>
+      <div class="agents-block">
+        <p>Some businesses need instruments that do not exist in the catalogue. A customer triage system for a specific industry. A compliance checker for a regulated workflow. An internal knowledge agent trained on your SOPs and policy documents.</p>
+        <p>We build custom agents as part of the implementation sprint. You describe the friction. We design the agent. You test it. We refine it. You own it. Same commercial model: one price, owned forever.</p>
+        <p>The difference between a custom agent and a PerformOS instrument is scope. Instruments are built for common operational patterns. Custom agents are built for your specific operation. Both ship the same way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section section-alt" id="audience">
+    <div class="wrap-narrow">
+      <span class="section-label">Who this is for</span>
+      <h2>Australian small business owners and operators who:</h2>
+      <div class="audience-list">
+        <div class="audience-item">Know AI matters but have not started because nobody has given them a practical on-ramp</div>
+        <div class="audience-item">Have tried AI tools and found they sit unused because the team was not trained</div>
+        <div class="audience-item">Need workflows that cross multiple systems and cannot be solved by a single SaaS product</div>
+        <div class="audience-item">Want AI adoption that is safe, measured, and actually gets used</div>
+        <div class="audience-item">Are tired of consultants who charge by the hour and leave nothing behind but a report</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Start the<br><em>conversation.</em></h2>
+          <p>Not a demo. Not a pitch deck. A conversation about your operation and where AI can actually remove friction. If we cannot help, we will tell you before you spend a dollar.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book a call</a>
+          <a href="ai-fluency-workshop.html" class="btn btn-on-dark">Start with a workshop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="catalogue.html#performlytics">Performlytics</a></li>
+            <li><a href="catalogue.html#pocket-customer">Pocket Customer</a></li>
+            <li><a href="catalogue.html#pulsecheck-360">PulseCheck 360</a></li>
+            <li><a href="catalogue.html#learnos">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-transformation.html">Transformation</a></li>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>
