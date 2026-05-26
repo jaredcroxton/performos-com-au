@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <circle cx="180" cy="315" r="80" fill="#0a0a0a" stroke="#d4ff3b" stroke-width="4"/>
+  <circle cx="180" cy="315" r="32" fill="#d4ff3b"/>
+  <text x="300" y="290" font-family="Georgia, serif" font-size="52" fill="#f2efe8" font-weight="400">Perform<text fill="rgba(242,239,232,0.4)" font-style="italic">OS</text></text>
+  <text x="300" y="350" font-family="Inter, sans-serif" font-size="18" fill="rgba(242,239,232,0.6)">An AI software studio. Instruments for operators.</text>
+</svg>
