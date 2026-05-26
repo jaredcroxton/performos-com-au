@@ -61,7 +61,17 @@
     button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 10vw, 140px); letter-spacing: -2.5px; line-height: 0.92; color: var(--ink); }
+
+    /* Selection-style marker highlight (flat lime band, no skew) for emphasis phrases like 'Your plan' */
+    .mark {
+      background: var(--accent);
+      color: var(--ink);
+      padding: 0 0.18em;
+      border-radius: 2px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
     h1 em { font-style: italic; color: var(--ink-40); }
     h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
     h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
@@ -123,14 +133,14 @@
 
     /* INSTRUMENT GRID */
     .instruments { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
-    .inst-card { padding: 32px; border-radius: 16px; border: 1px solid var(--ink-12); background: var(--ivory); transition: border-color .2s ease; display: flex; flex-direction: column; }
+    .inst-card { padding: 22px 22px 20px; border-radius: 14px; border: 1px solid var(--ink-12); background: var(--ivory); transition: border-color .2s ease; display: flex; flex-direction: column; }
     .inst-card:hover { border-color: var(--ink-40); }
-    .inst-num { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--ink-40); text-transform: uppercase; }
+    .inst-num { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ink-40); text-transform: uppercase; }
     .inst-status { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink); margin-left: 10px; }
-    .inst-status .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
-    .inst-card h3 { font-size: 26px; margin: 12px 0 10px; }
-    .inst-card p { font-size: 15px; color: var(--ink-60); line-height: 1.6; flex: 1; }
-    .inst-card .inst-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 14px; font-weight: 500; color: var(--ink); }
+    .inst-status .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+    .inst-card h3 { font-size: 22px; margin: 8px 0 6px; letter-spacing: -0.3px; }
+    .inst-card p { font-size: 13.5px; color: var(--ink-60); line-height: 1.55; flex: 1; }
+    .inst-card .inst-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13px; font-weight: 500; color: var(--ink); }
 
     /* COMMERCIAL */
     .commercial { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 32px; }
@@ -501,20 +511,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-meta">
-        <span class="meta-l"><span class="accent-dot" aria-hidden="true"></span>Operating . Est. 2025 . Jared Croxton . Founder</span>
-        <span class="meta-r">
-          Volume . Studio No.
-          <span class="studio-num" aria-hidden="true">01</span>
-        </span>
-      </div>
-
       <div class="hero-main">
         <div class="hero-text">
           <h1>Learning that<br>makes you<br><span class="highlight">Perform.</span></h1>
-          <p class="hero-subhead">We turn up. We train your team. We redesign your workflows. We ship the instruments.</p>
           <div class="cta-row">
-            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Book a call</a>
+            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start your plan</a>
             <a href="catalogue.html" class="btn btn-ghost">Browse the catalogue</a>
           </div>
         </div>
@@ -634,8 +635,8 @@
   <!-- CATALOGUE -->
   <section class="section" id="catalogue">
     <div class="wrap">
-      <span class="section-label">Volume 01 &middot; 2026</span>
-      <h2>Four instruments. All live and shipping.</h2>
+      <span class="section-label">The catalogue</span>
+      <h2>Four instruments. All <span class="mark">live</span> and shipping.</h2>
       <p class="section-intro">Each solves one specific operational problem. Each ships with a seven-day free preview and a single purchase price. No seat fees. No update invoices. No vendor lock-in.</p>
       <div class="instruments">
         <div class="inst-card">
@@ -672,7 +673,7 @@
       <div class="commercial">
         <div>
           <span class="section-label">The commercial model</span>
-          <h2>One price. Your plan.<br><em>No subscriptions.</em></h2>
+          <h2><span class="mark">One price.</span> <span class="mark">Your plan.</span><br><em>No subscriptions.</em></h2>
         </div>
         <div>
           <p>The 12-week course is $499. That is the whole price. No upsells. No subscription. No per-module fees. You get a custom curriculum built around how you actually learn and where you actually want to go. From zero AI experience through to building your own custom agents and automated workflows.</p>
@@ -796,7 +797,7 @@
       </div>
       <div class="foot-base">
         <span>&copy; PerformOS . Made in Australia</span>
-        <span>Volume 01 . 2026 . Powering high performance</span>
+        <span>Powering high performance</span>
       </div>
     </div>
   </footer>
