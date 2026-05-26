@@ -408,6 +408,17 @@
        ──────────────────────────────────────────────── */
     .hero-main { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
     .hero-text { max-width: 560px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 18px; height: 1px; background: var(--accent);
+    }
 
     /* Studio meta row at top of hero */
     .hero-meta {
@@ -669,10 +680,12 @@
     <div class="wrap">
       <div class="hero-main">
         <div class="hero-text">
-          <h1>Learning that<br>makes you<br><span class="highlight">Perform.</span></h1>
+          <span class="hero-eyebrow">A 12-week custom AI plan . For individuals</span>
+          <h1>Built around<br>how you<br>work in <span class="highlight">your role.</span></h1>
+          <p class="hero-subhead">Lift your AI capability in your actual job. Custom curriculum, your pace, your tools. Works no matter what your team uses.</p>
           <div class="cta-row">
-            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start your plan</a>
-            <a href="catalogue.html" class="btn btn-ghost">Browse the catalogue</a>
+            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start your 12-week plan</a>
+            <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
           </div>
         </div>
 
