@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use AI in Small Business . PerformOS</title>
+  <meta name="description" content="Getting started with AI for business does not require a technical background. A practical guide for Australian small business operators who want to use AI without becoming technologists.">
+  <meta name="author" content="PerformOS Studio">
+
+  <meta property="og:title" content="How to Use AI in Small Business . PerformOS">
+  <meta property="og:description" content="Getting started with AI for business does not require a technical background. A practical guide for Australian small business operators who want to use AI without becoming technologists.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://performos.com.au/blog-how-to-use-ai-small-business.html">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/blog-how-to-use-ai-small-business.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV (shared) */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+
+    /* BLOG ARTICLE HEADER */
+    .blog-hero { padding: 56px 0 32px; }
+    .breadcrumb {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .5; }
+
+    .blog-meta {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 20px;
+    }
+    .blog-meta span { display: inline-flex; align-items: center; }
+    .blog-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-40); margin: 0 6px; }
+
+    .blog-dek {
+      font-family: var(--sans); font-size: 17px;
+      color: var(--ink-60); line-height: 1.6;
+      margin-top: 18px; max-width: 580px;
+    }
+
+    .blog-sep { border: 0; border-top: 1px solid var(--ink-12); margin: 32px 0 0; }
+
+    /* ARTICLE BODY */
+    .blog-body { padding: 40px 0 32px; }
+    .blog-body h2 {
+      font-family: var(--serif); font-size: 28px; font-weight: 400;
+      letter-spacing: -0.4px; margin-top: 48px; margin-bottom: 16px;
+      color: var(--ink); line-height: 1.15;
+    }
+    .blog-body h3 {
+      font-family: var(--serif); font-size: 22px; font-weight: 400;
+      letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 12px;
+      color: var(--ink); line-height: 1.2;
+    }
+    .blog-body p {
+      font-size: 16px; line-height: 1.65;
+      color: var(--ink); margin-bottom: 18px;
+    }
+    .blog-body strong { font-weight: 600; }
+    .blog-body a {
+      color: var(--ink); text-decoration: underline;
+      text-decoration-color: var(--accent); text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+    .blog-body a:hover { text-decoration-color: var(--ink); }
+    .blog-body ul {
+      padding-left: 24px; list-style-type: disc;
+      margin-bottom: 18px;
+    }
+    .blog-body ul li { margin-bottom: 8px; line-height: 1.65; }
+
+    /* RELATED ARTICLE */
+    .blog-related {
+      padding: 16px 0 40px;
+      border-top: 1px solid var(--ink-12);
+    }
+    .blog-related-label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40); margin-bottom: 10px;
+    }
+    .blog-related-link {
+      font-family: var(--serif); font-size: 20px;
+      color: var(--ink); text-decoration: underline;
+      text-decoration-color: var(--accent); text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+    .blog-related-link:hover { text-decoration-color: var(--ink); }
+
+    /* CTA */
+    .blog-cta {
+      margin-top: 16px;
+      background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+    }
+    .blog-cta h2 {
+      font-family: var(--serif); font-weight: 400;
+      color: var(--ivory); font-size: 32px;
+      line-height: 1.05; letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    .blog-cta p {
+      color: rgba(242,239,232,.7);
+      font-size: 15px; line-height: 1.55;
+      margin-bottom: 24px;
+    }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .blog-hero { padding: 32px 0 20px; }
+      .blog-body { padding: 28px 0 24px; }
+      .blog-body h2 { font-size: 24px; margin-top: 36px; }
+      .blog-body h3 { font-size: 20px; margin-top: 24px; }
+      .blog-body p { font-size: 15px; }
+      .blog-cta { padding: 24px 22px; border-radius: 16px; }
+      .blog-cta h2 { font-size: 26px; }
+      .blog-cta .btn { min-height: 44px; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://performos.com.au/#organization",
+        "name": "PerformOS",
+        "url": "https://performos.com.au",
+        "description": "An AI software studio helping small businesses in Australia adopt AI through practical training, workflow design, implementation support, and software they own forever.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "PerformOS"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://performos.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://performos.com.au/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "How to Use AI in Small Business", "item": "https://performos.com.au/blog-how-to-use-ai-small-business.html" }
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Use AI in Small Business",
+        "description": "Getting started with AI for business does not require a technical background. A practical guide for Australian small business operators who want to use AI without becoming technologists.",
+        "datePublished": "2026-05-26",
+        "author": {
+          "@type": "Organization",
+          "name": "PerformOS Studio"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "PerformOS",
+          "url": "https://performos.com.au"
+        },
+        "url": "https://performos.com.au/blog-how-to-use-ai-small-business.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html#catalogue">Catalogue</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BLOG ARTICLE HERO -->
+  <section class="blog-hero">
+    <div class="wrap-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">PerformOS</a>
+        <span class="sep">.</span>
+        <a href="blog.html">Blog</a>
+        <span class="sep">.</span>
+        <span>How to use AI in small business</span>
+      </nav>
+
+      <h1>How to use AI in small business</h1>
+
+      <div class="blog-meta">
+        <span>26 May 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>PerformOS Studio</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>~6 min read</span>
+      </div>
+
+      <p class="blog-dek">A practical starting point for Australian operators</p>
+      <hr class="blog-sep">
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="blog-body">
+    <div class="wrap-narrow">
+
+<p>You searched this phrase because you are ready to act. Not to read another report. Not to watch another webinar. You want to know where to start, what to avoid, and whether this is something your business can actually use or just something the tech industry wants you to subscribe to. This article answers those questions directly, in the order an operator would ask them.</p>
+
+<h2>You do not need to become a technologist</h2>
+
+<p>Getting started with AI for business does not require a computer science degree, a data team, or the ability to write code. In 2026, AI instruments are operated the same way you operate a search engine: by asking questions in plain English and refining the output until it is right.</p>
+
+<p>The skill is not programming. The skill is knowing which operational task to hand to which instrument. That distinction matters because it changes who AI is for. It is not for the IT department. It is for the operator who writes the same type of email twelve times a week and knows exactly what a good one looks like. It is for the team lead who can spot a pattern in customer complaints but does not have the time to categorise a hundred support tickets by hand.</p>
+
+<p>Most Australian small business operators already use AI without labelling it that way. Your phone filters spam calls. Your email client sorts promotions from priority messages. Your bank flags unusual transactions. Those are all AI, running quietly in the background. Fluency means moving from passive use to deliberate use: knowing enough to hand the right task to the right instrument, inspect the output, and ship it.</p>
+
+<p>This is not a technical transition. It is an operational one. The operator who learns to use AI is not becoming an engineer. They are becoming more precise at the job they already do.</p>
+
+<h2>Where AI fits in a business your size</h2>
+
+<p>AI is not a single capability. It is a pattern that applies differently depending on the task. For a small business, four categories cover most of the ground where AI actually delivers results rather than promises.</p>
+
+<p><strong>Repeatable writing.</strong> Proposals, email responses, social content, job advertisements. Any text you produce more than once a week with a predictable structure is a candidate. A Brisbane-based trade business that sends the same type of quote follow-up thirty times a month is not being inefficient. The task itself is repeatable. AI can draft version one. The operator supplies the judgement that makes it final.</p>
+
+<p><strong>Customer inquiry triage.</strong> Sorting incoming messages, prioritising urgent requests, and drafting first-reply templates. Most operators handle this manually until the volume breaks their attention. AI does not replace the conversation. It removes the sorting work that happens before the conversation starts, so the operator arrives at the inbox already knowing which messages need their voice and which ones a templated reply can handle.</p>
+
+<p><strong>Data sorting and summarising.</strong> Spreadsheets, monthly reports, invoice reconciliation, sales pipeline review. The operator still makes the decisions. AI handles the extraction and arrangement work that sits between raw data and the decision point. A monthly P&amp;L review that takes four hours of manual collation can become a fifteen-minute review of an AI-generated summary. The operator's judgement is still the bottleneck. It just arrives faster.</p>
+
+<p><strong>Scheduling and workflow.</strong> Meeting preparation, follow-up sequences, task routing. The kind of work that gets pushed to the end of the day and then pushed again. AI removes the cognitive cost of starting. You describe the pattern once. The instrument handles the repetition.</p>
+
+<p>Not every task is an AI task. The skill is knowing which is which. An operator who can look at their week and say "that is repeatable, that needs judgement, that is AI-ready" is an operator who has built fluency. The PerformOS catalogue of instruments is built around this exact categorisation: each instrument maps to one operational category and removes the friction inside it.</p>
+
+<h2>Three instruments you can start with today</h2>
+
+<p>The following are not hypothetical. Each one is something you can use in the next hour, with an Australian small business context, without needing a setup guide or a credit card.</p>
+
+<h3>Instrument 1: ChatGPT for writing tasks</h3>
+
+<p>ChatGPT is a general-purpose AI that drafts, edits, and formats text in plain English. For small business operators in Australia, the most practical first use is writing. Specifically: drafting customer email responses, supplier communications, job advertisements, or meeting note summaries.</p>
+
+<p>Start here. Take the last customer email you replied to. Paste your original reply and the customer's message into ChatGPT. Ask it to draft an alternative version. Compare the two. You will notice things about your own writing you had not noticed before: where you over-explain, where you hedge, where you could be more direct. That is the learning. The instrument did not write your reply for you. It showed you what you could have written.</p>
+
+<p>ChatGPT is not a source of truth. It is not a replacement for judgement. It is not a business strategist. It is a drafting instrument. Use it to remove the friction of starting from a blank page. The operator who can spot the difference between a good draft and the right draft is the operator who will get value from this.</p>
+
+<h3>Instrument 2: A second pair of eyes on your thinking</h3>
+
+<p>This is the lowest-barrier entry point in AI. No output to publish. No customer-facing risk. Take a business decision you are weighing up right now. Describe the situation to an AI instrument: what you are considering, what you know, what you are uncertain about. Then ask a single question: "List three risks I have not considered."</p>
+
+<p>The value is not in the answer being correct. The value is in being forced to articulate your thinking clearly enough that an external system can respond to it. Most operators make decisions quickly with incomplete context. This exercise slows the process down just enough to surface blind spots. It costs nothing. It takes five minutes. And it builds the habit of pressure-testing your thinking before you commit resources.</p>
+
+<h3>Instrument 3: Automating one repeatable workflow</h3>
+
+<p>Pick one task you do the same way every week. A Monday morning report. A Friday afternoon client update. A weekly invoice reconciliation. Describe the inputs, meaning what information you start with, and the desired output, meaning what the finished product looks like. Hand that description to an AI instrument and ask it to produce a first draft.</p>
+
+<p>The goal is not perfection. The goal is seeing what happens when someone or something else produces version one. Once the blank page is gone, editing is fast. Most operators discover that the friction was never the complexity of the task. It was the starting. Remove the starting friction once, and you have changed how you approach every repeatable task in the business.</p>
+
+<p>If you want to see the instruments Australian operators are choosing for workflow automation, <a href="blog-ai-instruments-small-business-australia.html">the companion article covers the full PerformOS catalogue</a>.</p>
+
+<h2>The thing most operators get wrong</h2>
+
+<p>The most common mistake when bringing AI into a small business is treating it as a research project instead of an operational habit.</p>
+
+<p>Operators spend weeks comparing instruments, reading reviews, attending webinars. They build a mental model of the landscape. They never ship anything. The research becomes the work, and the work never changes.</p>
+
+<p>The fix is straightforward. Pick one instrument. Use it on one real task. Ship the output within 48 hours. Then iterate. Fluency comes from use, not from study. The same way you learned to run a business: by running it, making mistakes, and correcting course.</p>
+
+<p>You do not need to understand how the language model works. You need to know what a good customer email looks like and whether the draft in front of you meets that standard. That is operator judgement. It is the one thing the AI cannot supply.</p>
+
+<h2>From trying to operating</h2>
+
+<p>Trying AI on your own works for one-off tasks. Draft a proposal. Summarise a report. Write a job ad. Each one is useful on its own. But one-off use does not build tempo. It does not become part of how the business operates.</p>
+
+<p>Operational fluency means your business has a map. You know which tasks AI handles and which it does not. You know which instrument solves which friction. You know how to evaluate a new instrument when it ships. You are not reacting to AI news. You are running a business where AI is part of the operating rhythm, the same way email and spreadsheets became part of the rhythm twenty years ago.</p>
+
+<p>The <a href="ai-fluency-workshop.html">AI Fluency Workshop</a> is built for operators who want that map. One session. One instrument, configured for your business. You leave with something running, not a list of things to research. It is not a course. It is the session where fluency starts.</p>
+
+    </div>
+  </section>
+
+  <!-- RELATED ARTICLE -->
+  <section class="blog-related">
+    <div class="wrap-narrow">
+      <p class="blog-related-label">Read next</p>
+      <a href="blog-ai-instruments-small-business-australia.html" class="blog-related-link">AI instruments Australian small businesses are choosing</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="blog-body" style="padding-top:0;">
+    <div class="wrap-narrow">
+      <div class="blog-cta">
+        <h2>Want the map, not just the article?</h2>
+        <p>The AI Fluency Workshop is one session. One instrument configured for your business. You leave with something running.</p>
+        <a href="ai-fluency-workshop.html" class="btn btn-accent">Book the workshop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="index.html#catalogue">Performlytics</a></li>
+            <li><a href="index.html#catalogue">Pocket Customer</a></li>
+            <li><a href="index.html#catalogue">PulseCheck 360</a></li>
+            <li><a href="index.html#catalogue">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-fluency.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="index.html#services">Roadmaps</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Hash-based smooth scroll on load
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  </script>
+</body>
+</html>

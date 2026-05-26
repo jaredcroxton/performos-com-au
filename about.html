@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PerformOS | An AI software studio by Jared Croxton</title>
+  <meta name="description" content="PerformOS is an AI software studio building focused instruments for small business operators. Founded by Jared Croxton. Based in Brisbane, Australia. No venture funding. No growth targets. Just instruments that perform.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="About PerformOS | An AI software studio by Jared Croxton">
+  <meta property="og:description" content="PerformOS is an AI software studio building focused instruments for small business operators. Founded by Jared Croxton. Based in Brisbane, Australia.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/about.html">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/about.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
+    h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+    .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 56px 0 32px; }
+    .breadcrumb {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .5; }
+    .page-hero p.intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 18px; max-width: 580px; }
+
+    /* SECTIONS */
+    .section { padding: 48px 0; }
+    .section-alt { background: var(--ivory-soft); }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .prose { font-size: 16px; color: var(--ink-60); line-height: 1.7; max-width: 720px; }
+    .prose p + p { margin-top: 14px; }
+    .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+    /* ORIGIN STORIES */
+    .origin-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; }
+    .origin-card { padding: 24px; border-radius: 12px; border: 1px solid var(--ink-12); background: var(--ivory); }
+    .origin-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .origin-card p { font-size: 14px; color: var(--ink-60); line-height: 1.65; }
+
+    /* CREDENTIALS */
+    .creds { margin-top: 28px; }
+    .cred-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--ink-12); align-items: flex-start; }
+    .cred-item .cred-icon { font-family: var(--mono); font-size: 16px; color: var(--ink-40); min-width: 24px; }
+    .cred-item p { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+
+    /* WHY + NAME + WHAT WE DONT DO */
+    .principles { margin-top: 28px; }
+    .principle { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--ink-12); }
+    .principle .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 7px; flex-shrink: 0; }
+    .principle p { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+
+    /* CTA BAND */
+    .cta-band {
+      margin-top: 40px; background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .cta-band h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .page-hero { padding: 32px 0 20px; }
+      .page-hero h1 { font-size: 36px; }
+      .section { padding: 36px 0; }
+      .origin-grid { grid-template-columns: 1fr; }
+      .cta-band { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; border-radius: 16px; }
+      .cta-band h2 { font-size: 26px; }
+      .cta-band .cta-row { justify-content: flex-start; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://performos.com.au/#organization",
+        "name": "PerformOS",
+        "url": "https://performos.com.au",
+        "description": "An AI software studio building focused instruments for small business operators. Founded by Jared Croxton. Based in Brisbane, Australia.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://performos.com.au/about/#jared-croxton",
+          "name": "Jared Croxton",
+          "jobTitle": "Founder",
+          "description": "Leads learning and development across seven APAC markets for Accor Plus. Built PerformOS to solve operational problems from real experience."
+        },
+        "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Brisbane", "addressCountry": "AU" } }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://performos.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://performos.com.au/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="ai-implementation.html">Implementation</a></li>
+        <li><a href="ai-agents.html">AI Agents</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html" class="current">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">PerformOS</a>
+        <span class="sep">.</span>
+        <span>About the studio</span>
+      </nav>
+      <h1>An AI<br><em>software studio.</em></h1>
+      <p class="intro">PerformOS is a small software studio based in Brisbane, Australia. We build instruments, not platforms. Four instruments. One studio. No venture funding. No growth targets. No ambition to be everything to everyone.</p>
+    </div>
+  </section>
+
+  <!-- THE OPERATOR -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">The operator behind the instruments</span>
+      <h2>Jared Croxton</h2>
+      <div class="prose" style="margin-top:14px;">
+        <p>Jared Croxton leads learning and development and talent acquisition for Accor Plus across seven APAC markets: Australia, New Zealand, India, Indonesia, Philippines, Thailand, and Vietnam. High-volume outbound telesales. Real targets. Real turnover. Real pressure to make training stick and performance measurable.</p>
+        <p>PerformOS is the studio he built to solve the problems he lives with every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIGIN STORIES -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="section-label">How the instruments started</span>
+      <h2>Every instrument came from a real operational problem.</h2>
+      <div class="origin-grid">
+        <div class="origin-card">
+          <h3>Pocket Customer</h3>
+          <p>Came from watching reps burn leads on live calls. They knew the methodology. They had been through the training. But under pressure, on a live call with a real customer, the script drifted and the deal slipped. No software existed that could coach in real time without a manager listening in. So he built it.</p>
+        </div>
+        <div class="origin-card">
+          <h3>LearnOS</h3>
+          <p>Came from paying too much for a learning management system nobody used. Monthly fees. Per-seat pricing. Content that sat unopened because the platform was too complex and the login was too many clicks away. So he built an LMS that is one purchase, owned forever, and simple enough that uploading a PowerPoint creates a course.</p>
+        </div>
+        <div class="origin-card">
+          <h3>PulseCheck 360</h3>
+          <p>Came from losing good people before anyone noticed they were at risk. Exit interviews revealed what the weekly stand-ups never did: they had been unhappy for months, nobody asked, and by the time the resignation landed it was too late. So he built an instrument that detects flight risk early and gives managers the conversation starters before the conversation is too late.</p>
+        </div>
+        <div class="origin-card">
+          <h3>Performlytics</h3>
+          <p>Came from waiting three days for a report that should have taken 12 seconds. A founder asking "why did revenue spike?" and getting the answer after the board meeting, not before it. So he built an AI operator that reads across the stack and answers in plain English, on demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">Credentials</span>
+      <h2>Practitioner, not theorist.</h2>
+      <div class="creds">
+        <div class="cred-item">
+          <span class="cred-icon">01</span>
+          <p>Master of Business Psychology, Edith Cowan University (current)</p>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon">02</span>
+          <p>MIT Agentic AI for Organisational Transformation (modules one through six completed)</p>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon">03</span>
+          <p>Everything PerformOS ships has been tested under production conditions in a real sales organisation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section section-alt">
+    <div class="wrap-narrow">
+      <span class="section-label">Why PerformOS exists</span>
+      <h2>The small business software market is broken.</h2>
+      <div class="prose" style="margin-top:14px;">
+        <p>Operators pay monthly for platforms they do not own, packed with features they do not use, and cannot walk away from because their data is locked inside. PerformOS exists to offer a different model.</p>
+      </div>
+      <div class="principles">
+        <div class="principle"><span class="dot"></span><p>Instruments, not platforms</p></div>
+        <div class="principle"><span class="dot"></span><p>One purchase, owned forever</p></div>
+        <div class="principle"><span class="dot"></span><p>No seat fees, no update invoices, no vendor lock-in</p></div>
+        <div class="principle"><span class="dot"></span><p>Software that does one job surgically</p></div>
+      </div>
+      <div class="prose" style="margin-top:20px;">
+        <p>We are not trying to replace your entire stack. We are trying to replace the one thing in your stack that frustrates you most.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE NAME -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">The name</span>
+      <h2>PerformOS.</h2>
+      <div class="prose" style="margin-top:14px;">
+        <p><strong>Perform</strong>, because the only measure of software is whether it makes your team perform better. <strong>OS</strong>, because an operating system is the layer that makes everything else run. That is what we build: the layer between your team and the friction that slows them down.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DON'T DO -->
+  <section class="section section-alt">
+    <div class="wrap-narrow">
+      <span class="section-label">What we do not do</span>
+      <h2>No venture funding. No growth targets. No platforms. No subscriptions. No lock-in.</h2>
+      <div class="prose" style="margin-top:14px;">
+        <p>We build instruments. We sell them once. We stand behind them. If that sounds like the kind of software studio you want to work with, we should talk.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Instruments that perform.<br><em>Built by an operator.</em></h2>
+          <p>Not a theory. Not a whitepaper. Software that comes from the floor, tested in a real sales organisation with real pressure and real targets.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book a call</a>
+          <a href="catalogue.html" class="btn btn-on-dark">View catalogue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="catalogue.html#performlytics">Performlytics</a></li>
+            <li><a href="catalogue.html#pocket-customer">Pocket Customer</a></li>
+            <li><a href="catalogue.html#pulsecheck-360">PulseCheck 360</a></li>
+            <li><a href="catalogue.html#learnos">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Training for Small Business in Australia | PerformOS</title>
+  <meta name="description" content="Hands-on AI fluency workshop for Australian small business owners. Leave with a working AI instrument configured for your business. One price, owned forever.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="AI Training for Small Business in Australia | PerformOS">
+  <meta property="og:description" content="Hands-on AI fluency workshop for Australian small business owners. Leave with a working AI instrument configured for your business. One price, owned forever.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/ai-fluency-workshop">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/ai-fluency-workshop">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV (shared) */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 56px 0 32px; }
+    .breadcrumb {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .5; }
+    .page-hero .subhead {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-top: 10px;
+    }
+    .page-hero p.intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 18px; max-width: 580px; }
+
+    /* CONTENT SECTIONS */
+    .content-section { padding: 32px 0; }
+    .content-section + .content-section { border-top: 1px solid var(--ink-12); padding-top: 40px; margin-top: 8px; }
+    .content-section h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.8vw, 40px); letter-spacing: -0.5px; line-height: 1.05; color: var(--ink); margin-bottom: 24px; }
+    .content-section h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; letter-spacing: -0.3px; line-height: 1.2; color: var(--ink); margin: 32px 0 12px; }
+    .content-section p { font-size: 16px; color: var(--ink-60); line-height: 1.65; margin-bottom: 14px; }
+    .content-section p strong { color: var(--ink); font-weight: 600; }
+    .content-section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .content-section a:hover { text-decoration-color: var(--ink); }
+
+    /* HIGHLIGHT BOX (3 deliverables) */
+    .highlight-list { margin: 24px 0; }
+    .highlight-item {
+      display: flex; gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .highlight-item:first-child { padding-top: 0; }
+    .highlight-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 100px;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink);
+      margin-top: 2px;
+    }
+    .highlight-item .highlight-text { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+    .highlight-item .highlight-text strong { color: var(--ink); font-weight: 600; }
+
+    /* PRICING CALLOUT */
+    .pricing-callout {
+      background: var(--ink-06);
+      border-radius: 14px; padding: 28px 32px;
+      margin: 28px 0;
+    }
+    .pricing-callout p { margin-bottom: 8px; }
+    .pricing-callout p:last-child { margin-bottom: 0; }
+
+    /* INSTRUMENT TABLE */
+    .instrument-table {
+      width: 100%; border-collapse: collapse;
+      margin: 24px 0 32px;
+      font-size: 14px;
+    }
+    .instrument-table th, .instrument-table td {
+      text-align: left; padding: 14px 16px;
+      border-bottom: 1px solid var(--ink-12);
+      vertical-align: top;
+    }
+    .instrument-table th {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--ink-40); font-weight: 400;
+      padding-bottom: 10px;
+    }
+    .instrument-table td { color: var(--ink-60); line-height: 1.55; }
+    .instrument-table td:first-child { color: var(--ink); font-weight: 500; min-width: 200px; }
+    .instrument-table td strong { color: var(--ink); font-weight: 600; }
+
+    /* INLINE CTA */
+    .cta-inline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 100px;
+      background: var(--ink); color: var(--ivory);
+      font-size: 14px; font-weight: 500;
+      transition: background .18s ease;
+      margin: 12px 0 8px;
+    }
+    .cta-inline:hover { background: rgba(10,10,10,.85); }
+
+    /* CHECKLIST IN WHO-IS-IT-FOR */
+    .fit-list { margin: 18px 0 0; }
+    .fit-list li {
+      display: flex; gap: 10px; align-items: baseline;
+      padding: 8px 0; font-size: 15px; color: var(--ink-60); line-height: 1.55;
+    }
+    .fit-list li::before {
+      content: ''; flex-shrink: 0;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      margin-top: 9px;
+    }
+
+    /* SECTION RULE */
+    .section-rule { border: 0; border-top: 1px solid var(--ink-12); margin: 0; }
+
+    /* FAQ */
+    .faq-section { padding: 24px 0 56px; }
+    .faq-group { margin-top: 48px; }
+    .faq-group:first-child { margin-top: 32px; }
+    .faq-group-head {
+      display: flex; align-items: baseline; gap: 16px;
+      padding-bottom: 14px; margin-bottom: 12px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .faq-group-num { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .faq-group-title { font-family: var(--serif); font-size: 26px; letter-spacing: -0.4px; }
+
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--ink-12); }
+    .faq-q {
+      width: 100%; text-align: left;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px; padding: 20px 0;
+      font-family: var(--serif); font-size: 22px; letter-spacing: -0.3px;
+      color: var(--ink);
+      transition: color .15s ease;
+    }
+    .faq-q:hover { color: var(--ink-60); }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 100px;
+      border: 1px solid var(--ink-12);
+      background: var(--ivory-soft);
+      position: relative;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .faq-toggle::before, .faq-toggle::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      background: var(--ink); border-radius: 1px;
+      transform: translate(-50%, -50%);
+    }
+    .faq-toggle::before { width: 10px; height: 1.5px; }
+    .faq-toggle::after { width: 1.5px; height: 10px; transition: transform .2s ease; }
+    .faq-q[aria-expanded="true"] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+    .faq-q[aria-expanded="true"] .faq-toggle { background: var(--accent); border-color: var(--accent); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-a-inner { padding: 0 0 22px; color: var(--ink-60); font-size: 15px; line-height: 1.65; max-width: 720px; }
+    .faq-a-inner p + p { margin-top: 10px; }
+    .faq-a-inner a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .faq-a-inner a:hover { color: var(--ink); text-decoration-color: var(--ink); }
+
+    /* CTA BLOCK */
+    .faq-cta {
+      margin-top: 64px;
+      background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .faq-cta h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .faq-cta h2 em { font-style: italic; color: var(--accent); }
+    .faq-cta p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .faq-cta .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .faq-cta .btn-accent { background: var(--accent); color: var(--ink); }
+    .faq-cta .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* OPENING PULL */
+    .opening-pull { margin: 32px 0 8px; }
+    .opening-pull p { font-size: 18px; color: var(--ink-60); line-height: 1.65; margin-bottom: 16px; }
+    .opening-pull p strong { color: var(--ink); font-weight: 600; }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    /* BOOKING CTA */
+    .booking-cta {
+      margin-top: 40px; padding: 32px 0;
+      border-top: 1px solid var(--ink-12);
+    }
+    .booking-cta h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.8vw, 40px); letter-spacing: -0.5px; line-height: 1.05; color: var(--ink); margin-bottom: 14px; }
+    .booking-cta p { font-size: 16px; color: var(--ink-60); line-height: 1.65; margin-bottom: 18px; max-width: 580px; }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .page-hero { padding: 32px 0 20px; }
+      .content-section { padding: 24px 0; }
+      .content-section + .content-section { padding-top: 32px; }
+      .content-section h3 { font-size: 20px; }
+      .pricing-callout { padding: 22px 20px; }
+      .instrument-table { font-size: 13px; }
+      .instrument-table th, .instrument-table td { padding: 10px 12px; }
+      .instrument-table td:first-child { min-width: 140px; }
+      .faq-group { margin-top: 36px; }
+      .faq-group-head { padding-bottom: 10px; }
+      .faq-group-title { font-size: 22px; }
+      .faq-q { font-size: 17px; padding: 18px 0; gap: 14px; min-height: 56px; }
+      .faq-cta { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; margin-top: 48px; border-radius: 16px; }
+      .faq-cta h2 { font-size: 26px; }
+      .faq-cta .cta-row { justify-content: flex-start; gap: 10px; }
+      .faq-cta .btn { min-height: 44px; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+      .highlight-item { gap: 12px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://performos.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://performos.com.au/services" },
+          { "@type": "ListItem", "position": 3, "name": "AI Fluency Workshop", "item": "https://performos.com.au/ai-fluency-workshop" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://performos.com.au/ai-fluency-workshop#service",
+        "name": "AI Fluency Workshop",
+        "serviceType": "AI training and adoption workshop",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://performos.com.au/#organization"
+        },
+        "description": "A hands-on AI fluency workshop for Australian small business owners and operators. Participants leave with a working AI instrument configured for their business, a fluency map, and a direct on-ramp to the PerformOS instrument catalogue.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        "audience": {
+          "@type": "BusinessAudience",
+          "name": "Australian small business owners and operators"
+        },
+        "offers": {
+          "@type": "Offer",
+          "businessFunction": "http://purl.org/goodrelations/v1#ProvideService",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "description": "One-time purchase. No subscription. No per-seat licence. Owned forever."
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://performos.com.au/ai-fluency-workshop#faq",
+        "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long is the AI Fluency Workshop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A half-day session. Four hours, typically 9am to 1pm including instrument configuration. Full-day available for deeper workflow mapping or larger teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the workshop on-site or remote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. On-site for businesses in Sydney, Melbourne, and Brisbane. Remote delivery available Australia-wide. Same format, same outcomes either way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the workshop cover for non-technical staff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The workshop is designed for non-technical operators. Every concept is explained in operational terms. If you can describe a process in your business, you can configure an AI instrument to handle part of it. No programming knowledge required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does AI training for a small business team cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One price covers the full session for up to eight operators. No per-person fee. No ongoing charges. Workshop price is credited toward your first instrument purchase within 30 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many people can attend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One to eight operators per session. Keeps it hands-on. Every operator configures their own instrument. Larger teams can run across multiple sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer ongoing training after the workshop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The workshop is not the end of the relationship. You leave with a fluency map and a priority queue. The natural next step is to commission your first PerformOS instrument. Ongoing support for your commissioned instrument is included. No separate training retainer."
+          }
+        }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html#catalogue">Catalogue</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="ai-fluency-workshop.html" class="current">Workshop</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">PerformOS</a>
+        <span class="sep">.</span>
+        <a href="index.html#services">Services</a>
+        <span class="sep">.</span>
+        <span>AI Fluency Workshop</span>
+      </nav>
+      <h1>AI fluency for<br><em>small business.</em></h1>
+      <div class="subhead">PerformOS. An AI Software Studio. Catalogue Volume 01, 2026.</div>
+    </div>
+  </section>
+
+  <!-- OPENING -->
+  <section class="content-section">
+    <div class="wrap-narrow">
+      <div class="opening-pull">
+        <p>You know AI matters. You have not started. That is normal.</p>
+        <p>Most Australian small business owners and operators are in the same position. The information environment is noise: hype on one side, fear on the other. Every week a new instrument ships. Every headline tells you AI is reshaping your industry. Nobody tells you what to do about it on a Tuesday morning when you have payroll to run and customers to answer.</p>
+        <p>The real gap is not knowledge. It is <strong>fluency</strong>. The ability to look at your business and know, with precision, which operational task to hand to AI first, which to hand second, and which to leave alone.</p>
+        <p>That is what the PerformOS AI Fluency Workshop delivers. Not a course. Not a certificate. A working AI instrument, spec'd and configured for your business before you leave.</p>
+        <p>The typical alternative: $500 to $5,000 per month in SaaS subscriptions for software you do not know how to use. Forever.</p>
+        <p><strong>Try it free. Buy it once. Own it forever.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- WHAT AI FLUENCY MEANS -->
+  <section class="content-section">
+    <div class="wrap-narrow">
+      <h2>What AI fluency actually means</h2>
+
+      <h3>Fluency, not literacy</h3>
+      <p>There is a difference between knowing about AI and being able to use it.</p>
+      <p>Literacy means you can read about ChatGPT. Fluency means you know which operational task to hand it first. Literacy means you have watched a demo. Fluency means you have configured an instrument, tested it against your real workflow, and shipped it into production.</p>
+      <p>Most AI training programmes stop at literacy. They teach definitions. They show screenshots. They hand out certificates. They leave operators exactly where they started: aware but inactive.</p>
+      <p>The PerformOS workshop starts at fluency and moves forward.</p>
+
+      <h3>Instruments, not platforms</h3>
+      <p>PerformOS does not build platforms. We build instruments. Small, precise pieces of software that remove one specific kind of friction.</p>
+      <p>A platform tries to do everything. An instrument does one job, surgically. Pocket Customer removes the gap between a sales script and a live call. LearnOS removes the ongoing cost of renting your own training content. PulseCheck 360 removes the lag between manager intuition and team-sentiment signal.</p>
+      <p>The workshop teaches operators to think this way: what is the exact operational problem, and what is the simplest AI instrument that solves it. No platform pitches. No enterprise sales decks. Just friction removal, one decision at a time.</p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- THE WORKSHOP -->
+  <section class="content-section">
+    <div class="wrap-narrow">
+      <h2>The AI Fluency Workshop</h2>
+      <p>A hands-on session for Australian small business owners and operators who are ready to stop reading about AI and start using it.</p>
+
+      <h3>Format</h3>
+      <p>Half-day. Four hours. 9am to 1pm including instrument configuration. Full-day available for deeper workflow mapping or larger teams.</p>
+      <p>On-site for businesses in Sydney, Melbourne, and Brisbane. Remote delivery available Australia-wide.</p>
+      <p>One to eight operators per session. Keeps it hands-on. Every operator configures their own instrument. Larger teams run across multiple sessions.</p>
+      <p>Led by an operator who uses AI, not a trainer who reads slides.</p>
+      <p>Hands-on: you configure a working instrument during the session.</p>
+      <p>No prerequisites. Bring your laptop and your operational headaches.</p>
+
+      <h3>What you will leave with</h3>
+      <div class="highlight-list">
+        <div class="highlight-item">
+          <div class="highlight-num">1</div>
+          <div class="highlight-text"><strong>A working AI instrument.</strong> Configured for your business, tested against your real workflow. Not a sandbox. Not a demo. Something you can test against your real workflow before you leave.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-num">2</div>
+          <div class="highlight-text"><strong>A fluency map.</strong> A prioritised list of operational tasks in your business, ranked by AI readiness. Which tasks to hand to AI first, second, and never. Built during the workshop, specific to your context.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-num">3</div>
+          <div class="highlight-text"><strong>A simple evaluation framework.</strong> A repeatable method for assessing new AI instruments as they ship, so you never need another "which AI instrument" Google search.</div>
+        </div>
+      </div>
+
+      <h3>Who this is for</h3>
+      <p>The workshop is built for Australian small business owners and operators who share a specific profile:</p>
+      <ul class="fit-list">
+        <li>You run a business. You do not run a technology department.</li>
+        <li>You know AI matters but have not started. Not because you are lazy. Because nobody has given you a practical on-ramp that matches how you actually work.</li>
+        <li>You value precision over hype. You tune out the noise and look for instruments that ship.</li>
+        <li>You measure output, not hours. You want results, not attendance certificates.</li>
+      </ul>
+      <p>If that sounds like you, the workshop fits.</p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- HOW IT WORKS -->
+  <section class="content-section">
+    <div class="wrap-narrow">
+      <h2>How it works</h2>
+
+      <h3>Pricing</h3>
+      <p>One price. Contact the studio for current workshop pricing.</p>
+      <p>No subscription. No per-seat licence. No vendor lock-in.</p>
+      <p>The instrument you configure during the workshop is yours. The fluency map is yours. There is no ongoing fee to keep using what you built.</p>
+      <div class="pricing-callout">
+        <p><strong>Workshop price credited toward your first instrument.</strong> If you commission a PerformOS instrument within 30 days of your workshop, the full workshop price is deducted from your instrument purchase. The workshop pays for itself the moment you ship.</p>
+      </div>
+
+      <h3>Booking</h3>
+      <a href="contact.html" class="cta-inline">Book the workshop</a>
+
+      <h3>What to bring</h3>
+      <p>Your laptop. A list of the three operational tasks in your business that consume the most time each week. That is it.</p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- AFTER THE WORKSHOP -->
+  <section class="content-section">
+    <div class="wrap-narrow">
+      <h2>After the workshop: your first instrument</h2>
+      <p>The workshop is not a standalone service. It is the on-ramp to the PerformOS instrument catalogue. Here is what happens next.</p>
+
+      <h3>Your fluency map becomes a build queue</h3>
+      <p>During the workshop, you produced a fluency map: a ranked list of operational tasks in your business, ordered by AI readiness.</p>
+      <p>The top-ranked task becomes your first instrument build. The instrument is built to your specification. You do not build it yourself. You tell us the friction, we remove it.</p>
+
+      <h3>Which instrument matches your map</h3>
+      <p>Every business is different. The fluency map determines what gets built. But here are the patterns operators most frequently land on:</p>
+
+      <table class="instrument-table">
+        <thead>
+          <tr>
+            <th>Your operational problem</th>
+            <th>The PerformOS instrument</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Your team practises sales conversations on real customers</td>
+            <td><strong>Pocket Customer.</strong> A voice-first AI roleplay coach that simulates customer conversations so your team practises safely, without risking a real deal. <span class="live" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);margin-left:6px;vertical-align:middle;"></span> Live</td>
+          </tr>
+          <tr>
+            <td>Your training content lives in PowerPoint decks and nobody completes it</td>
+            <td><strong>LearnOS.</strong> A custom LMS built around your real content. One build, one price, owned forever. No seat fees. <span class="live" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);margin-left:6px;vertical-align:middle;"></span> Live</td>
+          </tr>
+          <tr>
+            <td>You only learn a team member is struggling when they hand in their notice</td>
+            <td><strong>PulseCheck 360.</strong> A 3-minute weekly check-in that surfaces flight risk, burnout cascades, and sentiment drift before they become resignations. Manager visibility without the chase. <span class="live" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);margin-left:6px;vertical-align:middle;"></span> Live</td>
+          </tr>
+          <tr>
+            <td>You make decisions on gut feel because the numbers live in five different places</td>
+            <td><strong>Performlytics.</strong> Ask your data anything, in plain English. Reads across your stack, builds the dashboard, writes the insight in seconds, not days. <span class="live" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);margin-left:6px;vertical-align:middle;"></span> Live</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The workshop identifies the match. The catalogue supplies the instrument. You do not subscribe to it. You own it.</p>
+
+      <h3>Buy once, own forever</h3>
+      <p>Every PerformOS instrument follows the same commercial model. Seven-day free preview. One-time purchase. Owned forever. No monthly fees. No per-seat pricing. No vendor lock-in.</p>
+      <p>The workshop has one price. The instrument you commission after the workshop has one price. There is no retainer, no training subscription, and no ongoing licence.</p>
+      <p>This is not a training company pitch. It is an on-ramp to a catalogue you own.</p>
+      <p>Browse the <a href="index.html#catalogue">full PerformOS instrument catalogue</a>.</p>
+
+      <h3>When the workshop is not enough</h3>
+      <p>Sometimes the fluency map surfaces friction that no single instrument solves. Full workflow redesign across multiple systems. Agent architecture. Automation that crosses your CRM, your inbox, and your invoicing.</p>
+      <p>When that happens, the next step is not another workshop. It is the PerformOS implementation service. The workshop diagnoses. Implementation rebuilds.</p>
+      <p><a href="ai-implementation.html">Learn more</a> about the PerformOS implementation service.</p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="wrap-narrow">
+      <div class="faq-group" id="faq">
+        <div class="faq-group-head">
+          <span class="faq-group-num">FAQ</span>
+          <h2 class="faq-group-title">Workshop questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How long is the AI Fluency Workshop?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>A half-day session. Four hours, typically 9am to 1pm including instrument configuration. Full-day available for deeper workflow mapping or larger teams.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>Is the workshop on-site or remote?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>Both. On-site for businesses in Sydney, Melbourne, and Brisbane. Remote delivery available Australia-wide. Same format, same outcomes either way.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>What does the workshop cover for non-technical staff?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>The workshop is designed for non-technical operators. Every concept is explained in terms of operational tasks, not code. If you can describe a process in your business, you can configure an AI instrument to handle part of it. No programming knowledge required.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How much does AI training for a small business team cost?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>One price covers the full session for up to eight operators. No per-person fee. No ongoing charges. And if you commission a PerformOS instrument within 30 days of your workshop, the full workshop price is credited toward your instrument purchase.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>How many people can attend?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>One to eight operators per session. Keeps the session hands-on. Every operator configures their own instrument. Larger teams can run across multiple sessions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>Do you offer ongoing training after the workshop?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>The workshop is not the end of the relationship. It is the beginning. After the session, you have a fluency map and a priority queue. The natural next step is to commission your first PerformOS instrument. From that point, you work directly with the studio. The catalogue grows. Your fluency compounds.</p>
+                <p>Ongoing support for your commissioned instrument is included. There is no separate training retainer. If you need another workshop for new team members six months later, you book one. One price. Same model.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="faq-cta">
+        <div>
+          <h2>You know AI matters.<br>You have not started.<br><em>That ends today.</em></h2>
+          <p>The PerformOS AI Fluency Workshop gives you a working instrument, a fluency map, and a direct line to a catalogue of instruments you can own forever. No subscriptions. No platforms. No noise.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book the workshop</a>
+          <a href="index.html#catalogue" class="btn btn-on-dark">View catalogue</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="booking-cta">
+    <div class="wrap-narrow">
+      <h2>Not ready to book?</h2>
+      <p>Read how Australian small business is adopting AI in 2026. Or browse the PerformOS catalogue to see what each instrument removes.</p>
+      <a href="index.html#catalogue" class="cta-inline">Browse the catalogue</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="index.html#catalogue">Performlytics</a></li>
+            <li><a href="index.html#catalogue">Pocket Customer</a></li>
+            <li><a href="index.html#catalogue">PulseCheck 360</a></li>
+            <li><a href="index.html#catalogue">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshop</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="index.html#services">Roadmaps</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answer = btn.nextElementSibling;
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+      });
+    });
+
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  </script>
+</body>
+</html>

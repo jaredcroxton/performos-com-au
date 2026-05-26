@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI implementation for small business | PerformOS</title>
+  <meta name="description" content="AI implementation for small business without the SaaS treadmill. Four-week fixed-price sprints, working instruments, no slide decks. Built for operators who need AI that performs.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="AI implementation for small business | PerformOS">
+  <meta property="og:description" content="AI implementation for small business without the SaaS treadmill. Four-week fixed-price sprints, working instruments, no slide decks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/ai-implementation.html">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/ai-implementation.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
+    h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+    .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 56px 0 32px; }
+    .breadcrumb {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .5; }
+    .page-hero p.intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 18px; max-width: 580px; }
+
+    /* CONTENT SECTIONS */
+    .section { padding: 48px 0; }
+    .section-alt { background: var(--ivory-soft); }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .prose { font-size: 16px; color: var(--ink-60); line-height: 1.7; max-width: 720px; }
+    .prose p + p { margin-top: 14px; }
+    .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: var(--ink); }
+
+    /* SPRINT WEEKS */
+    .sprint-weeks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    .sprint-week { padding: 24px; border-radius: 12px; border: 1px solid var(--ink-12); background: var(--ivory); }
+    .sprint-week .week-num { font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-40); }
+    .sprint-week h3 { font-size: 18px; margin: 8px 0 8px; }
+    .sprint-week p { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; }
+    .two-col h3 { margin-bottom: 10px; }
+
+    /* INSTRUMENT PROBLEM MAP */
+    .problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+    .problem-card { padding: 24px; border-radius: 12px; border: 1px solid var(--ink-12); background: var(--ivory); }
+    .problem-card h3 { font-size: 20px; margin-bottom: 6px; }
+    .problem-card p { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
+
+    /* CTA BAND */
+    .cta-band {
+      margin-top: 40px; background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .cta-band h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .page-hero { padding: 32px 0 20px; }
+      .page-hero h1 { font-size: 36px; }
+      .section { padding: 36px 0; }
+      .sprint-weeks { grid-template-columns: 1fr; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .cta-band { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; border-radius: 16px; }
+      .cta-band h2 { font-size: 26px; }
+      .cta-band .cta-row { justify-content: flex-start; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://performos.com.au/#organization",
+        "name": "PerformOS",
+        "url": "https://performos.com.au"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://performos.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "AI Implementation", "item": "https://performos.com.au/ai-implementation.html" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Implementation Sprint",
+        "provider": { "@id": "https://performos.com.au/#organization" },
+        "description": "Four-week fixed-price AI implementation sprints for small businesses. Fixed scope, working instruments, no slide decks.",
+        "serviceType": "AI Implementation",
+        "areaServed": { "@type": "Country", "name": "Australia" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="ai-implementation.html" class="current">Implementation</a></li>
+        <li><a href="ai-agents.html">AI Agents</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">PerformOS</a>
+        <span class="sep">.</span>
+        <span>AI Implementation</span>
+      </nav>
+      <h1>AI implementation<br><em>for small business.</em></h1>
+      <p class="intro">Most small business AI sits unused. Ours does not. The problem is not the technology. It is the delivery model.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">The problem</span>
+      <div class="prose">
+        <p>Small business operators buy AI the same way big enterprises do: monthly subscriptions, per-seat pricing, feature-heavy dashboards, and implementation timelines measured in quarters. Then the software arrives and nobody uses it. The login goes stale. The renewal invoice lands and someone forwards it around asking whether anyone actually logged in last quarter.</p>
+        <p>PerformOS takes a different approach. We ship instruments, not platforms. We run implementation in four-week sprints, not six-month engagements. And every instrument we build is owned forever after a single purchase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT MEANS -->
+  <section class="section section-alt">
+    <div class="wrap-narrow">
+      <span class="section-label">What AI implementation actually means</span>
+      <h2>One problem. One instrument. One sprint.</h2>
+      <div class="prose" style="margin-top:16px;">
+        <p>For a small business, AI implementation is not about building infrastructure or hiring a data science team. It is about picking one operational problem, choosing the right instrument for it, and getting it running inside your business in under a month. That is the whole job. Everything else is noise.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>Better decisions</h3>
+          <p>Numbers sitting in spreadsheets that nobody has time to analyse. Sales figures, customer records, inventory. The instrument: <strong>Performlytics</strong>.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Better performance</h3>
+          <p>Sales calls that drift off script. Customer conversations that could have gone better but nobody coached them. The instrument: <strong>Pocket Customer</strong>.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Better visibility</h3>
+          <p>Team members who are burning out or looking elsewhere, and nobody knows until the resignation lands. The instrument: <strong>PulseCheck 360</strong>.</p>
+        </div>
+        <div class="problem-card">
+          <h3>Better training</h3>
+          <p>An LMS that does not cost $500 a month and still looks empty six months later. The instrument: <strong>LearnOS</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SPRINT -->
+  <section class="section">
+    <div class="wrap">
+      <span class="section-label">The four-week implementation sprint</span>
+      <h2>Fixed scope. Fixed price. No scope creep.</h2>
+      <div class="sprint-weeks">
+        <div class="sprint-week">
+          <span class="week-num">Week one</span>
+          <h3>Scope and configure</h3>
+          <p>We identify the operational problem, map it to the right PerformOS instrument, and configure the instrument to your business context. You upload your data, your sales methodology, your training content, or your team structure. We handle the technical setup.</p>
+        </div>
+        <div class="sprint-week">
+          <span class="week-num">Week two</span>
+          <h3>Initial deployment</h3>
+          <p>The instrument goes live inside your business. Your first rep runs a roleplay. Your first plain-English question returns an insight. Your first course is built from your content. Your first team check-in goes out.</p>
+        </div>
+        <div class="sprint-week">
+          <span class="week-num">Week three</span>
+          <h3>Operator onboarding</h3>
+          <p>Your team uses the instrument in real work. We watch the data, adjust the configuration, and answer questions. No training-the-trainer cascade. No change-management programme. Just operators using software that does one job well.</p>
+        </div>
+        <div class="sprint-week">
+          <span class="week-num">Week four</span>
+          <h3>Handover and ownership</h3>
+          <p>The instrument is yours. You own it. No ongoing fees. No renewal cycle. We hand over the keys and stay available if you need us. Most operators do not. The instrument just works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY FIXED PRICE -->
+  <section class="section section-alt">
+    <div class="wrap-narrow">
+      <span class="section-label">Why fixed price matters</span>
+      <h2>No hourly billing. No per-seat pricing.</h2>
+      <div class="prose" style="margin-top:16px;">
+        <p>Consulting firms sell AI implementation by the hour. Software vendors sell it by the seat. Both models reward complexity, because complexity extends the engagement or grows the licence bill.</p>
+        <p>PerformOS sprints are fixed in scope and fixed in price. You know what you are getting and what it costs before week one begins. If the instrument does not solve your problem, we say so during scoping and we do not start the sprint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU DON'T GET -->
+  <section class="section">
+    <div class="wrap-narrow">
+      <span class="section-label">What you do not get</span>
+      <h2>No slide decks. No maturity models. No upsells.</h2>
+      <div class="prose" style="margin-top:16px;">
+        <p>No capability assessments. No stakeholder alignment workshops. No six-month roadmaps. No "phase two" upsells. PerformOS sprints produce one thing: a working AI instrument deployed inside your business. If you want a consulting engagement, there are other studios for that.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO FOR -->
+  <section class="section section-alt">
+    <div class="wrap-narrow">
+      <span class="section-label">Who this is for</span>
+      <div class="two-col">
+        <div>
+          <h3>This is for operators who</h3>
+          <div class="prose">
+            <p>Have a specific operational problem they can name. Are prepared to spend four weeks solving it. Want to own the instrument, not rent it. Would rather ship something that works than wait for something perfect.</p>
+          </div>
+        </div>
+        <div>
+          <h3>This is not for</h3>
+          <div class="prose">
+            <p>Businesses that want to "explore AI" without committing to a specific outcome. Businesses that need enterprise procurement and vendor security reviews. Businesses that measure success by the size of the slide deck.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Name the problem.<br><em>We'll tell you if it fits.</em></h2>
+          <p>If it does, we scope a four-week sprint. Fixed price. Fixed outcome. You walk away with a working instrument you own forever. If it does not, we tell you honestly. No sales follow-up. No drip campaign. Just a straight answer.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book a call</a>
+          <a href="catalogue.html" class="btn btn-on-dark">View catalogue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="catalogue.html#performlytics">Performlytics</a></li>
+            <li><a href="catalogue.html#pocket-customer">Pocket Customer</a></li>
+            <li><a href="catalogue.html#pulsecheck-360">PulseCheck 360</a></li>
+            <li><a href="catalogue.html#learnos">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

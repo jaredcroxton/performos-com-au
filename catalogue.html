@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI software catalogue | Instruments by PerformOS</title>
+  <meta name="description" content="Four focused AI instruments for operators, founders, and teams. Try free, buy once, own forever. Performlytics, Pocket Customer, PulseCheck 360, and LearnOS.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="AI software catalogue | Instruments by PerformOS">
+  <meta property="og:description" content="Four focused AI instruments for operators, founders, and teams. Try free, buy once, own forever.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/catalogue.html">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/catalogue.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 72px); letter-spacing: -1.2px; line-height: 0.98; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
+    h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+    .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 56px 0 32px; }
+    .breadcrumb {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .5; }
+    .page-hero p.intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 18px; max-width: 620px; }
+
+    /* CATEGORY NAV */
+    .cat-nav {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 28px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--ink-12);
+    }
+    .cat-nav a {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--ink-60);
+      padding: 7px 14px; border-radius: 100px;
+      border: 1px solid var(--ink-12);
+      background: var(--ivory);
+      transition: background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .cat-nav a:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+
+    /* INSTRUMENT SECTIONS */
+    .section { padding: 48px 0; }
+    .section-alt { background: var(--ivory-soft); }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .prose { font-size: 16px; color: var(--ink-60); line-height: 1.7; max-width: 720px; }
+    .prose p + p { margin-top: 14px; }
+    .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+    /* INST DETAIL */
+    .inst-detail { margin-top: 28px; }
+    .inst-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .inst-num { font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; color: var(--ink-40); }
+    .inst-status { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink); }
+    .inst-status .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .inst-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+    .inst-grid .inst-col h3 { font-size: 16px; font-family: var(--mono); font-weight: 400; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .inst-grid .inst-col p, .inst-grid .inst-col li { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+    .inst-grid .inst-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .inst-grid .inst-col ul li { padding-left: 16px; position: relative; }
+    .inst-grid .inst-col ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+    .inst-quote { background: var(--ink); color: var(--ivory); padding: 20px 24px; border-radius: 12px; margin-top: 20px; font-family: var(--serif); font-size: 20px; font-style: italic; line-height: 1.4; }
+
+    /* CTA BAND */
+    .cta-band {
+      margin-top: 40px; background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .cta-band h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    /* COMMERCIAL */
+    .commercial { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 28px; }
+    .commercial h2 { font-size: 36px; line-height: 1.05; }
+    .commercial h2 em { font-style: italic; color: var(--accent); }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .page-hero { padding: 32px 0 20px; }
+      .page-hero h1 { font-size: 36px; }
+      .section { padding: 36px 0; }
+      .inst-grid { grid-template-columns: 1fr; gap: 20px; }
+      .commercial { grid-template-columns: 1fr; gap: 28px; }
+      .commercial h2 { font-size: 28px; }
+      .cta-band { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; border-radius: 16px; }
+      .cta-band h2 { font-size: 26px; }
+      .cta-band .cta-row { justify-content: flex-start; }
+      .cat-nav { gap: 6px; }
+      .cat-nav a { font-size: 10px; padding: 8px 12px; min-height: 36px; display: inline-flex; align-items: center; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://performos.com.au/#organization",
+        "name": "PerformOS",
+        "url": "https://performos.com.au"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://performos.com.au/" },
+          { "@type": "ListItem", "position": 2, "name": "Catalogue", "item": "https://performos.com.au/catalogue.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="catalogue.html" class="current">Catalogue</a></li>
+        <li><a href="ai-implementation.html">Implementation</a></li>
+        <li><a href="ai-agents.html">AI Agents</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Work with us</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">PerformOS</a>
+        <span class="sep">.</span>
+        <span>Catalogue</span>
+      </nav>
+      <h1>The <em>catalogue.</em></h1>
+      <p class="intro">Volume 01 &middot; 2026. Four instruments in active development or shipping. Each solves one specific operational problem. Each is a single purchase. Owned forever. No seat fees. No update invoices. No vendor lock-in.</p>
+      <div class="cat-nav">
+        <a href="#performlytics">Performlytics</a>
+        <a href="#pocket-customer">Pocket Customer</a>
+        <a href="#pulsecheck-360">PulseCheck 360</a>
+        <a href="#learnos">LearnOS</a>
+        <a href="#model">The model</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORM LYTICS -->
+  <section class="section" id="performlytics">
+    <div class="wrap-narrow">
+      <div class="inst-header">
+        <span class="inst-num">01</span>
+        <span class="inst-status"><span class="dot"></span>Live</span>
+      </div>
+      <h2>Performlytics</h2>
+      <div class="prose">
+        <p><strong>An AI operator for business intelligence.</strong> Upload a spreadsheet, connect your stack, ask a question. Performlytics reads your data, builds the dashboard, and writes the insight faster than any analyst.</p>
+      </div>
+      <div class="inst-grid">
+        <div class="inst-col">
+          <h3>What it removes</h3>
+          <p>The four-hour gap between "can you pull a report" and actually getting the answer. The bottleneck of having one person in the business who knows how to run the numbers.</p>
+          <h3 style="margin-top:20px;">Who it is for</h3>
+          <p>Founders, CFOs, RevOps leads, and anyone who currently asks someone else to pull data for them.</p>
+        </div>
+        <div class="inst-col">
+          <h3>Connects to</h3>
+          <ul>
+            <li>Stripe</li>
+            <li>HubSpot</li>
+            <li>Postgres</li>
+            <li>Segment</li>
+            <li>CSV and Excel</li>
+          </ul>
+          <h3 style="margin-top:20px;">Sample question</h3>
+          <p>"Why did revenue spike on April 9?"</p>
+        </div>
+      </div>
+      <div class="inst-quote">"Top three expansion customers drove $180K in ARR uplift. CSM calls flagged pricing as the catalyst. Recommendation: replicate Q2 renewal playbook."</div>
+      <p style="margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:1.2px;color:var(--ink-40);">Average insight time: 12 seconds.</p>
+      <a href="contact.html" class="btn-with-dot" style="margin-top:24px;"><span class="live" aria-hidden="true"></span>Preview Performlytics free for 7 days</a>
+    </div>
+  </section>
+
+  <!-- POCKET CUSTOMER -->
+  <section class="section section-alt" id="pocket-customer">
+    <div class="wrap-narrow">
+      <div class="inst-header">
+        <span class="inst-num">02</span>
+        <span class="inst-status"><span class="dot"></span>Live</span>
+      </div>
+      <h2>Pocket Customer</h2>
+      <div class="prose">
+        <p><strong>A voice-first AI sales coach.</strong> Stop practising on real customers. Pocket Customer listens live on every call, catches the moment a rep drifts off script, and whispers a coaching nudge before the deal slips.</p>
+      </div>
+      <div class="inst-grid">
+        <div class="inst-col">
+          <h3>What it removes</h3>
+          <p>The cost of a bad call. Reps burning leads on live conversations because they never got enough practice in a safe environment. The gap between knowing the methodology and executing it under pressure.</p>
+          <h3 style="margin-top:20px;">Who it is for</h3>
+          <p>Sales leaders, L&D teams, and ops managers responsible for rep ramp time and quota attainment.</p>
+        </div>
+        <div class="inst-col">
+          <h3>How it works</h3>
+          <ul>
+            <li>Upload your sales methodology and customer personas</li>
+            <li>Reps practise on demand against hostile, curious, and silent buyer personas</li>
+            <li>Managers get the weekly signal: script adherence, drift patterns, coaching prompts</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inst-quote">Measurable uplift in under a week from upload.</div>
+      <a href="contact.html" class="btn-with-dot" style="margin-top:24px;"><span class="live" aria-hidden="true"></span>Preview Pocket Customer free for 7 days</a>
+    </div>
+  </section>
+
+  <!-- PULSECHECK 360 -->
+  <section class="section" id="pulsecheck-360">
+    <div class="wrap-narrow">
+      <div class="inst-header">
+        <span class="inst-num">03</span>
+        <span class="inst-status"><span class="dot"></span>Live</span>
+      </div>
+      <h2>PulseCheck 360</h2>
+      <div class="prose">
+        <p><strong>Flight-risk detection for frontline teams.</strong> A three-minute weekly check-in that turns team sentiment into organisational intelligence. Detects flight risk before it becomes attrition. Generates draft one-on-one prompts so the manager walks into the conversation already informed.</p>
+      </div>
+      <div class="inst-grid">
+        <div class="inst-col">
+          <h3>What it removes</h3>
+          <p>The moment a good team member resigns and the manager realises they never saw it coming. The gap between how someone is actually doing and what the manager assumes.</p>
+          <h3 style="margin-top:20px;">Who it is for</h3>
+          <p>Team leads, HR business partners, and ops directors responsible for retention in high-turnover environments.</p>
+        </div>
+        <div class="inst-col">
+          <h3>How it works</h3>
+          <ul>
+            <li>Team members complete a three-minute weekly check-in</li>
+            <li>PulseCheck 360 reads every response and tracks sentiment over time</li>
+            <li>Managers get flagged when a team member moves from healthy to at risk to flight risk</li>
+            <li>AI-generated one-on-one prompts arrive before the conversation, not after</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inst-quote">See it before they say it.</div>
+      <a href="contact.html" class="btn-with-dot" style="margin-top:24px;"><span class="live" aria-hidden="true"></span>Preview PulseCheck 360 free for 7 days</a>
+    </div>
+  </section>
+
+  <!-- LEARNOS -->
+  <section class="section section-alt" id="learnos">
+    <div class="wrap-narrow">
+      <div class="inst-header">
+        <span class="inst-num">04</span>
+        <span class="inst-status"><span class="dot"></span>Live</span>
+      </div>
+      <h2>LearnOS</h2>
+      <div class="prose">
+        <p><strong>Custom LMS. Fixed price. Owned forever.</strong> Stop renting your LMS. Start owning it. Upload a PowerPoint, get a course. Real-time completion and score tracking. Bulk enrol operators in 30 seconds. Your domain, your data, your S3 bucket.</p>
+      </div>
+      <div class="inst-grid">
+        <div class="inst-col">
+          <h3>What it removes</h3>
+          <p>The monthly LMS invoice for software nobody uses. The content that sits unopened because the platform is too complex. The sunk cost of a system you cannot walk away from.</p>
+          <h3 style="margin-top:20px;">Who it is for</h3>
+          <p>L&D managers, ops leaders, and contact-centre heads who are replacing a recurring LMS subscription.</p>
+        </div>
+        <div class="inst-col">
+          <h3>How it works</h3>
+          <ul>
+            <li>Upload your training content: PowerPoint, PDF, video, or text</li>
+            <li>LearnOS structures it into courses with completion tracking and scoring</li>
+            <li>Bulk enrol your team in under 30 seconds</li>
+            <li>Run it on your domain, in your S3 bucket, with your data</li>
+          </ul>
+        </div>
+      </div>
+      <div class="inst-quote">One build. One price. Yours forever.</div>
+      <a href="contact.html" class="btn-with-dot" style="margin-top:24px;"><span class="live" aria-hidden="true"></span>Preview LearnOS free for 7 days</a>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL MODEL -->
+  <section class="section" id="model">
+    <div class="wrap">
+      <div class="commercial">
+        <div>
+          <span class="section-label">The commercial model</span>
+          <h2>Try it free.<br>Buy it once.<br><em>Own it forever.</em></h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>The typical alternative: $500 to $5,000 per month in SaaS fees. Forever. Per seat. Per month. Per update cycle. You never stop paying and you never own anything.</p>
+            <p>PerformOS instruments are different. Seven-day free preview on everything we ship. One purchase price. The instrument is yours. No monthly subscriptions. No per-seat pricing. No vendor lock-in.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Not sure which instrument<br><em>you need?</em></h2>
+          <p>Name the problem. We will tell you whether one of our instruments solves it. If it does not, we tell you honestly.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book a call</a>
+          <a href="ai-implementation.html" class="btn btn-on-dark">Implementation sprints</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">An AI software studio. Small, focused. Building instruments for operators, founders, and teams who measure themselves.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="catalogue.html#performlytics">Performlytics</a></li>
+            <li><a href="catalogue.html#pocket-customer">Pocket Customer</a></li>
+            <li><a href="catalogue.html#pulsecheck-360">PulseCheck 360</a></li>
+            <li><a href="catalogue.html#learnos">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>
