@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://performos.com.au/sitemap.xml
