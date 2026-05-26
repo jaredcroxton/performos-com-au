@@ -110,6 +110,139 @@
       transition: border-color .15s ease;
     }
     .strip-cta:hover { border-color: var(--accent); }
+
+    /* Side link on each instrument strip item — goes to catalogue page on this site */
+    .inst-strip li { position: relative; }
+    .inst-strip .strip-side {
+      position: absolute; top: 18px; right: 18px;
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--ink-40);
+      padding: 4px 8px;
+      border: 1px solid var(--ink-12); border-radius: 100px;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .inst-strip .strip-side:hover { color: var(--ink); border-color: var(--ink-40); }
+    @media (max-width: 720px) {
+      .inst-strip .strip-side { top: auto; bottom: 14px; right: 14px; }
+    }
+
+    /* ─── Marquee scroll strip — editorial brand band ─── */
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--ink-12);
+      border-bottom: 1px solid var(--ink-12);
+      padding: 22px 0;
+      background: var(--ivory);
+      position: relative; z-index: 2;
+    }
+    .marquee-track {
+      display: inline-flex; align-items: center; gap: 28px;
+      white-space: nowrap;
+      animation: marquee-scroll 38s linear infinite;
+      will-change: transform;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-word {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 32px; letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+    .marquee-word em {
+      font-style: italic; color: var(--ink-40);
+      margin-left: 14px;
+    }
+    .marquee-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
+      flex-shrink: 0;
+    }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 720px) {
+      .marquee { padding: 16px 0; }
+      .marquee-word { font-size: 22px; }
+      .marquee-track { gap: 20px; animation-duration: 28s; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+    }
+
+    /* ─── 12-Week Course section: delivery modes + outputs ─── */
+    .course-intro {
+      max-width: 720px; margin-top: 14px;
+      font-size: 17px; color: var(--ink-60); line-height: 1.6;
+    }
+    .course-modes {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 40px;
+    }
+    .course-mode {
+      background: var(--ivory);
+      border: 1px solid var(--ink-12);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: border-color .2s ease, transform .25s ease;
+    }
+    .course-mode:hover { border-color: var(--ink-40); transform: translateY(-2px); }
+    .course-mode-num {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-40);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .course-mode-num::before {
+      content: ''; display: inline-block;
+      width: 14px; height: 1px; background: var(--accent);
+    }
+    .course-mode h3 {
+      font-family: var(--serif); font-size: 24px;
+      letter-spacing: -0.4px; line-height: 1.15;
+      margin: 4px 0 4px;
+    }
+    .course-mode p {
+      font-size: 14px; color: var(--ink-60); line-height: 1.6;
+    }
+    .course-outputs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 16px;
+    }
+    .course-output {
+      background: var(--ink); color: var(--ivory);
+      border-radius: 14px; padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .course-output-label {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .course-output-label::before {
+      content: ''; display: inline-block;
+      width: 18px; height: 1px; background: var(--accent);
+    }
+    .course-output h3 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 26px; letter-spacing: -0.4px; line-height: 1.15;
+      color: var(--ivory);
+    }
+    .course-output p {
+      font-size: 14.5px; color: rgba(242,239,232,.72);
+      line-height: 1.6;
+    }
+    .course-cta {
+      margin-top: 32px;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    }
+    @media (max-width: 720px) {
+      .course-modes, .course-outputs { grid-template-columns: 1fr; }
+      .course-output { padding: 24px 22px; }
+      .course-output h3 { font-size: 22px; }
+    }
     @media (max-width: 720px) {
       .inst-strip { grid-template-columns: 1fr 1fr; }
       .inst-strip li:nth-child(3) { border-left: none; padding-left: 0; }
@@ -144,13 +277,13 @@
     /* 02. Manifesto pull-quote section — billboard moment on Ink */
     .manifesto {
       background: var(--ink); color: var(--ivory);
-      padding: 96px 0; position: relative; overflow: hidden;
+      padding: 72px 0; position: relative; overflow: hidden;
     }
     .manifesto .wrap { position: relative; }
     .manifesto-eyebrow {
       font-family: var(--mono); font-size: 11px;
       letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 32px;
+      color: var(--accent); margin-bottom: 24px;
       display: inline-flex; align-items: center; gap: 10px;
     }
     .manifesto-eyebrow::before {
@@ -159,10 +292,10 @@
     }
     .manifesto-quote {
       font-family: var(--serif); font-weight: 400;
-      font-size: clamp(40px, 5.6vw, 88px);
-      line-height: 0.98; letter-spacing: -2px;
+      font-size: clamp(32px, 4.2vw, 64px);
+      line-height: 1.02; letter-spacing: -1.4px;
       color: var(--ivory);
-      max-width: 1000px;
+      max-width: 880px;
     }
     .manifesto-quote em {
       font-style: italic; color: var(--accent);
@@ -211,6 +344,7 @@
       color: var(--ink);
     }
     .stat-num em { font-style: italic; color: var(--accent); }
+    .stat-num .accent-glyph { color: var(--accent); font-style: normal; }
     .stat-label {
       font-size: 13.5px; color: var(--ink-60);
       line-height: 1.45;
@@ -291,11 +425,11 @@
     /* NAV */
     nav.site-nav {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(242,239,232,.82);
-      backdrop-filter: saturate(150%) blur(12px);
-      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      background: rgba(242,239,232,.96);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
       border-bottom: 1px solid transparent;
-      transition: border-color .25s ease;
+      transition: border-color .25s ease, background .25s ease;
     }
     nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
@@ -834,13 +968,44 @@
     </div>
   </section>
 
+  <!-- MARQUEE — editorial brand band, scrolls infinitely -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-word">Intelligence <em>for teams</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Performance <em>by design</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Analytics <em>for operators</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Workflow <em>for founders</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Capability <em>that compounds</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Learning <em>built around you</em></span>
+      <span class="marquee-dot"></span>
+      <!-- duplicate set for seamless loop -->
+      <span class="marquee-word">Intelligence <em>for teams</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Performance <em>by design</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Analytics <em>for operators</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Workflow <em>for founders</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Capability <em>that compounds</em></span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-word">Learning <em>built around you</em></span>
+      <span class="marquee-dot"></span>
+    </div>
+  </div>
+
   <!-- STATS ROW — the 12-week plan in numbers -->
   <section class="stats-row">
     <div class="wrap">
       <div class="stats-eyebrow reveal">The plan in numbers</div>
       <div class="stats-grid reveal-stagger">
         <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weeks. Custom curriculum, built around your role and how you learn.</span></div>
-        <div class="stat"><span class="stat-num"><em>$</em>499</span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
+        <div class="stat"><span class="stat-num"><span class="accent-glyph">$</span>499</span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
         <div class="stat"><span class="stat-num">04</span><span class="stat-label">Learning modes. Sprints, video, written, live conversation. Pick what fits you.</span></div>
         <div class="stat"><span class="stat-num"><em>∞</em></span><span class="stat-label">Yours forever. The plan, the materials, the agents you build. No lock-in.</span></div>
       </div>
@@ -853,30 +1018,46 @@
   <!-- HOW IT WORKS + LANES -->
   <section class="section section-alt" id="how-it-works">
     <div class="wrap">
-      <span class="section-label">The 12-week plan</span>
-      <h2>How you learn is how we build it.</h2>
-      <p class="section-intro">No two people learn the same way. We design your 12 weeks around exactly how you absorb and apply information best. Everything below the course sits behind it as the engine: instruments we have already built, training programmes we have already delivered, and real capability we can draw on to make your plan work.</p>
-      <div class="lanes">
-        <div class="lane lane-featured">
-          <h3>12-Week Course</h3>
-          <p><span class="lane-lead">Your custom AI adoption plan. $499.</span> We start with a conversation. You tell us where you are with AI and how you learn best. We build you a 12-week curriculum. Could be 20-minute daily practical modules. Could be three-minute video lessons. Could be explicit written instructions you work through at your desk. Everything is 100 percent customised. By week 12 you are building custom agents and automating workflows, or you are confidently using AI in your daily work. Wherever you want to land, we get you there.</p>
-          <a href="contact.html" class="lane-link">Book your plan</a>
+      <span class="section-label">The 12-week course</span>
+      <h2>Custom learning, sized to <em>your lifestyle.</em></h2>
+      <p class="course-intro">Twenty minutes a day or two hours on Sunday. Audible on the commute or written at your desk. The course shapes itself around how you actually live and how you actually learn. There is no fixed curriculum because there is no fixed learner. Every module, every week, built for you.</p>
+
+      <!-- Delivery modes -->
+      <div class="course-modes">
+        <div class="course-mode">
+          <span class="course-mode-num">Mode 01</span>
+          <h3>Audible.</h3>
+          <p>Lessons you listen to on the commute, at the gym, or while you cook. Mobile-first. No screen required. Learning that fits the day you already have.</p>
         </div>
-        <div class="lane">
-          <h3>Workshop</h3>
-          <p><span class="lane-lead">Half-day AI Fluency Workshop.</span> On-site in Sydney, Melbourne, or Brisbane. Remote Australia-wide. Your team leaves with a working AI instrument configured for your actual business. One price. No ongoing fees.</p>
-          <a href="ai-fluency-workshop.html" class="lane-link">Book the workshop</a>
+        <div class="course-mode">
+          <span class="course-mode-num">Mode 02</span>
+          <h3>Video explainer.</h3>
+          <p>Short visual breakdowns of every concept. Watch once, replay the part that did not click. Pause-friendly, replay-friendly, no rush.</p>
         </div>
-        <div class="lane">
-          <h3>Implementation</h3>
-          <p><span class="lane-lead">Four-week implementation sprint.</span> Fixed scope. Fixed price. We map your operation, identify the highest-friction tasks, build the instruments, and ship them into production. Your team walks away with working AI, not a slide deck.</p>
-          <a href="ai-implementation.html" class="lane-link">Book a sprint</a>
+        <div class="course-mode">
+          <span class="course-mode-num">Mode 03</span>
+          <h3>Detailed breakdowns.</h3>
+          <p>Explicit written step-by-step instructions you work through at your desk. Print-friendly. Reference-grade. Mark up as you go.</p>
         </div>
-        <div class="lane">
-          <h3>Catalogue</h3>
-          <p><span class="lane-lead">Four instruments you own.</span> Pocket Customer. LearnOS. PulseCheck 360. Performlytics. Each does one job surgically. Try free for seven days. Buy once. Own forever. No monthly subscriptions. No per-seat pricing. No vendor lock-in.</p>
-          <a href="catalogue.html" class="lane-link">Browse the catalogue</a>
+      </div>
+
+      <!-- Outputs: playbook + capstone -->
+      <div class="course-outputs">
+        <div class="course-output">
+          <span class="course-output-label">Output 01 . The playbook</span>
+          <h3>Everything you build, packaged forever.</h3>
+          <p>Your prompts. Your custom agents. Your workflows. Every artefact you create across the 12 weeks lands in a playbook you keep. It travels with you, role to role, team to team, year to year. The next AI shift, you already have a reference.</p>
         </div>
+        <div class="course-output">
+          <span class="course-output-label">Output 02 . The capstone</span>
+          <h3>A practical capstone, not a quiz.</h3>
+          <p>Week 12 is one real task. You ship something AI-powered into your actual job. Competence is proven, not assumed. The capstone is how you and your manager know the plan worked.</p>
+        </div>
+      </div>
+
+      <div class="course-cta">
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start your 12-week plan</a>
+        <a href="#contact" class="btn btn-ghost">$499 . One price . Yours forever</a>
       </div>
     </div>
   </section>
@@ -888,10 +1069,26 @@
       <h2>Built by an operator who ships.</h2>
       <p class="section-intro">The 12-week plan is not theory. It is the same thinking and the same instruments behind four live products used by real operators. You learn to think and ship the way the studio does.</p>
       <ul class="inst-strip">
-        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#performlytics"><strong>Performlytics</strong><em>AI business intelligence</em></a></li>
-        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#pocket-customer"><strong>Pocket Customer</strong><em>Voice-first sales coach</em></a></li>
-        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#pulsecheck-360"><strong>PulseCheck 360</strong><em>Team sentiment intelligence</em></a></li>
-        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#learnos"><strong>LearnOS</strong><em>Custom LMS, owned forever</em></a></li>
+        <li>
+          <span class="strip-dot" aria-hidden="true"></span>
+          <a href="https://performlytics.vercel.app" target="_blank" rel="noopener"><strong>Performlytics</strong><em>AI business intelligence</em></a>
+          <a href="catalogue.html#performlytics" class="strip-side" aria-label="Performlytics on PerformOS">On site</a>
+        </li>
+        <li>
+          <span class="strip-dot" aria-hidden="true"></span>
+          <a href="https://www.pocketcustomer.ai" target="_blank" rel="noopener"><strong>Pocket Customer</strong><em>Voice-first sales coach</em></a>
+          <a href="catalogue.html#pocket-customer" class="strip-side" aria-label="Pocket Customer on PerformOS">On site</a>
+        </li>
+        <li>
+          <span class="strip-dot" aria-hidden="true"></span>
+          <a href="https://www.pulsecheck360.ai" target="_blank" rel="noopener"><strong>PulseCheck 360</strong><em>Team sentiment intelligence</em></a>
+          <a href="catalogue.html#pulsecheck-360" class="strip-side" aria-label="PulseCheck 360 on PerformOS">On site</a>
+        </li>
+        <li>
+          <span class="strip-dot" aria-hidden="true"></span>
+          <a href="https://learnos-iota.vercel.app" target="_blank" rel="noopener"><strong>LearnOS</strong><em>Custom LMS, owned forever</em></a>
+          <a href="catalogue.html#learnos" class="strip-side" aria-label="LearnOS on PerformOS">On site</a>
+        </li>
       </ul>
       <a href="catalogue.html" class="strip-cta">Browse the full catalogue <span aria-hidden="true">&rarr;</span></a>
     </div>
