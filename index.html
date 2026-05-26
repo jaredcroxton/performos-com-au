@@ -328,25 +328,26 @@
       content: ''; flex: 0 0 24px; height: 1px; background: var(--ink-40);
     }
     .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 0;
     }
     .stat {
-      padding: 0 24px;
+      padding: 0 36px;
       border-left: 1px solid var(--ink-12);
-      display: flex; flex-direction: column; gap: 8px;
+      display: flex; flex-direction: column; gap: 16px;
     }
     .stat:first-child { border-left: none; padding-left: 0; }
     .stat-num {
       font-family: var(--serif); font-weight: 400;
-      font-size: clamp(56px, 7vw, 96px);
-      line-height: 0.92; letter-spacing: -3px;
+      font-size: clamp(88px, 12vw, 180px);
+      line-height: 0.86; letter-spacing: -5px;
       color: var(--ink);
     }
     .stat-num em { font-style: italic; color: var(--accent); }
     .stat-num .accent-glyph { color: var(--accent); font-style: normal; }
+    .stat-num .mark { padding: 0 0.04em; border-radius: 1px; }
     .stat-label {
-      font-size: 13.5px; color: var(--ink-60);
+      font-size: 14.5px; color: var(--ink-60);
       line-height: 1.45;
       max-width: 200px;
     }
@@ -404,10 +405,10 @@
       .manifesto { padding: 64px 0; }
       .manifesto-quote { font-size: clamp(32px, 9vw, 48px); letter-spacing: -1.4px; }
       .stats-row { padding: 48px 0; }
-      .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px 0; }
-      .stat { padding: 0 16px; }
-      .stat:nth-child(3) { border-left: none; padding-left: 0; }
-      .stat-num { font-size: clamp(44px, 12vw, 64px); }
+      .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stat { padding: 0; border-left: none; border-top: 1px solid var(--ink-12); padding-top: 24px; gap: 10px; }
+      .stat:first-child { border-top: none; padding-top: 0; }
+      .stat-num { font-size: clamp(64px, 18vw, 96px); letter-spacing: -3px; }
       body::after { opacity: 0.04; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -475,6 +476,150 @@
     .section-dark .section-intro { color: rgba(242,239,232,.72); }
     .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
     .section-intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 14px; max-width: 620px; }
+
+    /* ─── PRICING — world-class dark commercial-model slide ─── */
+    .section-pricing { padding: 104px 0 96px; position: relative; overflow: hidden; }
+    .section-pricing::before {
+      content: ''; position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, 80%); height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: .55; pointer-events: none;
+    }
+    .section-pricing::after {
+      content: ''; position: absolute; pointer-events: none;
+      top: -28%; left: 50%; transform: translateX(-50%);
+      width: 820px; height: 820px;
+      background: radial-gradient(circle, rgba(212,255,59,.10), transparent 65%);
+      z-index: 0;
+    }
+    .section-pricing > .wrap { position: relative; z-index: 1; }
+
+    .pricing-head {
+      text-align: center; max-width: 760px;
+      margin: 0 auto 56px;
+    }
+    .pricing-head .section-label {
+      color: var(--accent);
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .pricing-title {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(40px, 5.6vw, 72px);
+      letter-spacing: -1.6px; line-height: 1;
+      color: var(--ivory);
+    }
+    .section-dark .pricing-title em,
+    .pricing-title em {
+      font-style: italic; color: rgba(242,239,232,.62);
+    }
+
+    .pricing-card {
+      max-width: 920px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(242,239,232,.045), rgba(242,239,232,.015));
+      border: 1px solid rgba(242,239,232,.10);
+      border-radius: 24px;
+      padding: 60px 56px 48px;
+      position: relative;
+      box-shadow: 0 40px 100px -36px rgba(0,0,0,.65), inset 0 1px 0 rgba(242,239,232,.06);
+    }
+    .pricing-card::before {
+      content: ''; position: absolute; inset: 0;
+      border-radius: 24px; pointer-events: none;
+      background: radial-gradient(at 50% 0%, rgba(212,255,59,.10), transparent 55%);
+    }
+    .pricing-card > * { position: relative; z-index: 1; }
+
+    .pricing-price {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 14px;
+    }
+    .price-currency {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(36px, 4.4vw, 58px);
+      color: var(--accent);
+      line-height: 1; margin-top: 16px;
+    }
+    .price-number {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(120px, 16vw, 200px);
+      letter-spacing: -7px; line-height: .85;
+      background: linear-gradient(180deg, #ffffff 0%, #d4d0c2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .price-meta {
+      display: flex; flex-direction: column;
+      align-self: flex-end; padding-bottom: 22px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.6px; text-transform: uppercase;
+      color: rgba(242,239,232,.55);
+      gap: 4px;
+    }
+    .price-meta-line.accent { color: var(--accent); }
+
+    .pricing-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(242,239,232,.16), transparent);
+      margin: 40px 0 36px;
+    }
+
+    .pricing-features {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px 40px;
+      margin: 0 0 40px;
+    }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 15.5px; color: rgba(242,239,232,.92);
+      line-height: 1.35;
+    }
+    .pricing-features .check {
+      display: inline-grid; place-items: center;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(212,255,59,.14);
+      color: var(--accent);
+      font-family: var(--mono); font-size: 13px; font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .pricing-cta {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 14px 22px; justify-content: center;
+    }
+    .pricing-link {
+      font-family: var(--mono); font-size: 11.5px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(242,239,232,.85);
+      border-bottom: 1px solid rgba(242,239,232,.22);
+      padding-bottom: 4px;
+      transition: border-color .15s ease, color .15s ease;
+    }
+    .pricing-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    .pricing-foot {
+      max-width: 720px; margin: 56px auto 0;
+      text-align: center;
+      font-size: 14.5px; color: rgba(242,239,232,.68);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 720px) {
+      .section-pricing { padding: 64px 0 56px; }
+      .pricing-head { margin-bottom: 36px; }
+      .pricing-title { font-size: clamp(32px, 8vw, 44px); letter-spacing: -1px; }
+      .pricing-card { padding: 36px 22px 30px; border-radius: 18px; }
+      .price-currency { font-size: 32px; margin-top: 8px; }
+      .price-number { font-size: clamp(88px, 28vw, 140px); letter-spacing: -4px; }
+      .price-meta { font-size: 10px; padding-bottom: 8px; }
+      .pricing-features { grid-template-columns: 1fr; gap: 12px; }
+      .pricing-features li { font-size: 14.5px; }
+      .pricing-divider { margin: 28px 0 24px; }
+      .pricing-foot { font-size: 13.5px; margin-top: 40px; }
+    }
 
     /* FOUR LANES */
     .lanes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
@@ -1017,8 +1162,7 @@
       <div class="stats-eyebrow reveal">The plan in numbers</div>
       <div class="stats-grid reveal-stagger">
         <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weeks. Custom curriculum, built around your role and how you learn.</span></div>
-        <div class="stat"><span class="stat-num"><span class="accent-glyph">$</span>499</span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
-        <div class="stat"><span class="stat-num">04</span><span class="stat-label">Learning modes. Sprints, video, written, live conversation. Pick what fits you.</span></div>
+        <div class="stat"><span class="stat-num"><span class="mark">$499</span></span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
         <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Yours forever. The plan, the materials, the agents you build. No lock-in.</span></div>
       </div>
     </div>
@@ -1032,7 +1176,7 @@
     <div class="wrap">
       <span class="section-label">The 12-week course</span>
       <h2>Custom learning, sized to <em>your lifestyle.</em></h2>
-      <p class="course-intro">Twenty minutes a day or two hours on Sunday. Audible on the commute or written at your desk. The course shapes itself around how you actually live and how you actually learn. There is no fixed curriculum because there is no fixed learner. Every module, every week, built for you.</p>
+      <p class="course-intro">It starts with a discovery call. From that conversation we build you a complete, fully customised 12-week AI plan. Twenty minutes a day or two hours on Sunday. Audible on the commute or written at your desk. The course shapes itself around how you actually live and how you actually learn. There is no fixed curriculum because there is no fixed learner. Every module, every week, built for you.</p>
 
       <!-- Delivery modes -->
       <div class="course-modes">
@@ -1063,7 +1207,7 @@
         <div class="course-output">
           <span class="course-output-label">Output 02 . The capstone</span>
           <h3>A practical capstone, not a quiz.</h3>
-          <p>Week 12 is one real project of your choice. Build something AI-powered you actually use, automate something tedious, ship a custom agent for a hobby or interest, design a workflow that saves you time every week. Competence is proven by what you can build, not by what you can recite.</p>
+          <p>Week 12 is one real project of your choice. Build something AI-powered you actually use, automate something tedious, ship a custom agent, design a workflow that saves you time every week. Competence is proven by what you can build, not by what you can recite.</p>
         </div>
       </div>
 
@@ -1107,18 +1251,41 @@
   </section>
 
   <!-- COMMERCIAL MODEL -->
-  <section class="section section-dark" id="model">
+  <section class="section section-dark section-pricing" id="model">
     <div class="wrap">
-      <div class="commercial">
-        <div>
-          <span class="section-label">The commercial model</span>
-          <h2>One price. Your plan.<br><em><span class="mark">No subscriptions.</span></em></h2>
+      <div class="pricing-head">
+        <span class="section-label">The commercial model</span>
+        <h2 class="pricing-title">One price. Your plan.<br><em>Yours forever.</em></h2>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-price">
+          <span class="price-currency">$</span>
+          <span class="price-number">499</span>
+          <span class="price-meta">
+            <span class="price-meta-line">AUD &middot; One-time</span>
+            <span class="price-meta-line accent">Yours forever</span>
+          </span>
         </div>
-        <div>
-          <p>The 12-week course is $499. That is the whole price. No upsells. No subscription. No per-module fees. You get a custom curriculum built around how you actually learn and where you actually want to go. From zero AI experience through to building your own custom agents and automated workflows.</p>
-          <p>If you want to go beyond the course, our instruments are available as one-time purchases. Same model. Try free. Buy once. Own forever. No monthly fees. No per-seat pricing. No vendor lock-in.</p>
+
+        <div class="pricing-divider"></div>
+
+        <ul class="pricing-features">
+          <li><span class="check" aria-hidden="true">+</span>12-week custom curriculum</li>
+          <li><span class="check" aria-hidden="true">+</span>Built around how you learn</li>
+          <li><span class="check" aria-hidden="true">+</span>Zero AI to custom agents</li>
+          <li><span class="check" aria-hidden="true">+</span>No subscriptions, ever</li>
+          <li><span class="check" aria-hidden="true">+</span>No per-module fees</li>
+          <li><span class="check" aria-hidden="true">+</span>Your playbook, yours to keep</li>
+        </ul>
+
+        <div class="pricing-cta">
+          <a href="contact.html" class="btn btn-accent">Start your 12-week plan</a>
+          <a href="course.html#process" class="pricing-link">How the course works &rarr;</a>
         </div>
       </div>
+
+      <p class="pricing-foot">Beyond the course, every instrument in the studio is sold the same way. Try free. Buy once. Own forever. No monthly fees. No per-seat pricing. No vendor lock-in.</p>
     </div>
   </section>
 
