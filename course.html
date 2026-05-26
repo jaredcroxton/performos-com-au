@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-Week Personalised AI Adoption Course | $499 | PerformOS</title>
+  <meta name="description" content="A 12-week personalised AI course built around how you learn. 20-minute daily modules. 3-minute videos. Explicit instructions. Custom curriculum. $499 one-time. No subscription.">
+  <meta name="author" content="Jared Croxton">
+
+  <meta property="og:title" content="12-Week Personalised AI Adoption Course | $499 | PerformOS">
+  <meta property="og:description" content="A 12-week personalised AI course. Built around how you learn. Custom curriculum. $499 one-time. No subscription.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://performos.com.au/course">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:site_name" content="PerformOS">
+  <meta property="og:image" content="https://performos.com.au/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@PerformOS">
+
+  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://performos.com.au/course">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4ff3b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f2efe8;
+      --ivory-soft: #e8e4da;
+      --ink: #0a0a0a;
+      --ink-60: rgba(10,10,10,.60);
+      --ink-40: rgba(10,10,10,.40);
+      --ink-12: rgba(10,10,10,.12);
+      --ink-06: rgba(10,10,10,.06);
+      --accent: #d4ff3b;
+      --accent-glow: rgba(212,255,59,.85);
+      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
+      --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 64px); letter-spacing: -1.2px; line-height: 1.0; color: var(--ink); }
+    h1 em { font-style: italic; color: var(--ink-40); }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
+    h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .wrap-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    nav.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(242,239,232,.82);
+      backdrop-filter: saturate(150%) blur(12px);
+      -webkit-backdrop-filter: saturate(150%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    nav.site-nav.scrolled { border-bottom-color: var(--ink-12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .brand-lockup { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px; color: var(--ink); }
+    .brand-mark { width: 24px; height: 24px; flex-shrink: 0; }
+    .brand-wordmark em { font-style: italic; color: var(--ink-40); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--ink-60); font-weight: 500; transition: color .15s ease; }
+    .nav-links a:hover, .nav-links a.current { color: var(--ink); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 100px; }
+    .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 100px; font-family: var(--sans); font-size: 14px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; white-space: nowrap; }
+    .btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink-12); }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-40); }
+    .btn-sm { padding: 10px 16px; font-size: 13px; }
+    .btn-with-dot { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 100px; background: var(--ink); color: var(--ivory); font-size: 13px; font-weight: 500; }
+    .btn-with-dot .live { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .btn-accent { background: var(--accent); color: var(--ink); }
+    .btn-on-dark { background: var(--ivory); color: var(--ink); }
+
+    /* HERO */
+    .hero { padding: 72px 0 48px; }
+    .hero h1 { max-width: 860px; }
+    .hero .intro { font-size: 18px; color: var(--ink-60); line-height: 1.6; margin-top: 20px; max-width: 620px; }
+    .hero .hero-subhead { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1.2; margin-top: 16px; max-width: 720px; }
+    .hero .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+    /* SECTION */
+    .section { padding: 72px 0; }
+    .section-alt { background: var(--ivory-soft); }
+    .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
+    .section-intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 14px; max-width: 620px; }
+
+    /* LEARNING STYLES */
+    .styles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+    .style-card { padding: 28px 24px; border-radius: 14px; border: 1px solid var(--ink-12); background: var(--ivory); text-align: center; }
+    .style-icon { font-family: var(--serif); font-size: 36px; line-height: 1; margin-bottom: 12px; }
+    .style-card h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: -0.2px; }
+    .style-card p { font-size: 14px; color: var(--ink-60); line-height: 1.55; }
+
+    /* HOW IT WORKS */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+    .step { padding: 32px 24px; border-radius: 14px; border: 1px solid var(--ink-12); background: var(--ivory); position: relative; }
+    .step-num { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--ink-40); text-transform: uppercase; margin-bottom: 12px; }
+    .step h3 { font-size: 20px; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
+
+    /* SPECTRUM */
+    .spectrum { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .spec-card { padding: 28px 24px; border-radius: 14px; border: 1px solid var(--ink-12); background: var(--ivory); }
+    .spec-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .spec-card p { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
+    .spec-card.spec-high { border-color: var(--accent); background: rgba(212,255,59,.04); }
+
+    /* COMPARISON */
+    .comparison { margin-top: 40px; }
+    .comp-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0; border-bottom: 1px solid var(--ink-12); padding: 18px 0; font-size: 14px; }
+    .comp-header { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+    .comp-row .comp-label { font-weight: 600; color: var(--ink); }
+    .comp-row .comp-win { color: var(--ink); font-weight: 600; }
+    .comp-row .comp-meh { color: var(--ink-60); }
+    .comp-row .comp-nope { color: var(--ink-40); }
+    .comp-performos { border-left: 3px solid var(--accent); padding-left: 12px; }
+
+    /* CTA BAND */
+    .cta-band {
+      margin-top: 64px; background: var(--ink); color: var(--ivory);
+      border-radius: 18px; padding: 40px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    }
+    .cta-band h2 { font-family: var(--serif); font-weight: 400; color: var(--ivory); font-size: 32px; line-height: 1.05; letter-spacing: -0.5px; }
+    .cta-band h2 em { font-style: italic; color: var(--accent); }
+    .cta-band p { color: rgba(242,239,232,.7); margin-top: 14px; font-size: 15px; line-height: 1.55; }
+    .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    /* FAQ */
+    .faq-preview { margin-top: 32px; }
+    .faq-item { border-bottom: 1px solid var(--ink-12); }
+    .faq-q {
+      width: 100%; text-align: left;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px; padding: 20px 0;
+      font-family: var(--serif); font-size: 20px; letter-spacing: -0.3px;
+      color: var(--ink); transition: color .15s ease;
+    }
+    .faq-q:hover { color: var(--ink-60); }
+    .faq-toggle {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 100px;
+      border: 1px solid var(--ink-12); background: var(--ivory-soft);
+      position: relative; transition: background .15s ease, border-color .15s ease;
+    }
+    .faq-toggle::before, .faq-toggle::after {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      background: var(--ink); border-radius: 1px;
+      transform: translate(-50%, -50%);
+    }
+    .faq-toggle::before { width: 10px; height: 1.5px; }
+    .faq-toggle::after { width: 1.5px; height: 10px; transition: transform .2s ease; }
+    .faq-q[aria-expanded="true"] .faq-toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+    .faq-q[aria-expanded="true"] .faq-toggle { background: var(--accent); border-color: var(--accent); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-a-inner { padding: 0 0 22px; color: var(--ink-60); font-size: 15px; line-height: 1.65; max-width: 720px; }
+    .faq-a-inner a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+    /* PRICE */
+    .price-block {
+      background: var(--ivory);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px 32px;
+      align-items: center;
+    }
+    .price-num { font-family: var(--serif); font-size: 56px; letter-spacing: -1.5px; line-height: 1; color: var(--ink); }
+    .price-detail h3 { font-size: 22px; margin-bottom: 6px; }
+    .price-detail p { font-size: 14px; color: var(--ink-60); line-height: 1.6; }
+    .price-detail ul { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+    .price-detail ul li { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--ink); }
+    .price-detail ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+    /* FOOTER */
+    footer.site-footer { border-top: 1px solid var(--ink-12); padding: 40px 0 24px; margin-top: 48px; background: var(--ivory); }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+    .foot-tagline { color: var(--ink-60); font-size: 14px; line-height: 1.55; margin-top: 14px; max-width: 320px; }
+    .foot-loc { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+    .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); font-weight: 400; margin-bottom: 14px; }
+    .foot-col ul { display: flex; flex-direction: column; gap: 9px; }
+    .foot-col a { font-size: 14px; color: var(--ink-60); transition: color .15s ease; }
+    .foot-col a:hover { color: var(--ink); }
+    .foot-base { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--ink-12); font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); }
+
+    @media (max-width: 900px) {
+      .styles-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .comp-row { grid-template-columns: 1fr 1fr 1fr; font-size: 12px; }
+      .comp-header { font-size: 9px; }
+      .price-block { grid-template-columns: 1fr; gap: 16px; }
+    }
+    @media (max-width: 720px) {
+      .wrap, .wrap-narrow { padding: 0 22px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: inline-flex; min-width: 44px; min-height: 44px; }
+      .nav-cta .btn-ghost { display: none; }
+      .nav-inner { gap: 12px; }
+      .hero { padding: 48px 0 32px; }
+      .hero h1 { font-size: 36px; }
+      .hero .intro { font-size: 16px; }
+      .hero .hero-subhead { font-size: 18px; }
+      .section { padding: 48px 0; }
+      .styles-grid { grid-template-columns: 1fr; gap: 12px; }
+      .steps { grid-template-columns: 1fr; gap: 16px; }
+      .spectrum { grid-template-columns: 1fr; }
+      .comp-row { grid-template-columns: 1fr 1fr; font-size: 11px; }
+      .comp-header { font-size: 8px; }
+      .cta-band { grid-template-columns: 1fr; padding: 24px 22px; gap: 22px; margin-top: 48px; border-radius: 16px; }
+      .cta-band h2 { font-size: 26px; }
+      .cta-band .cta-row { justify-content: flex-start; }
+      .price-num { font-size: 42px; }
+      .foot-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .foot-base { flex-direction: column; gap: 10px; text-align: center; font-size: 10px; }
+    }
+
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--ivory);
+      padding: 14px 24px 22px;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--ink-12); }
+    .nav-links.open li:last-child { border-bottom: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://performos.com.au/course/#service",
+        "name": "12-Week Personalised AI Adoption Course",
+        "provider": { "@id": "https://performos.com.au/#organization" },
+        "description": "A 12-week personalised AI course built around how you learn. Custom curriculum from basic AI fluency to custom agents. $499 one-time. No subscription.",
+        "offers": {
+          "@type": "Offer",
+          "price": "499",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock"
+        },
+        "url": "https://performos.com.au/course"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is the course personalised to how I learn?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We start with a conversation. You tell us how you absorb information best: 20-minute daily practical modules, three-minute video lessons, explicit written instructions, or any combination. We design all 12 weeks around that. Nothing is off the shelf."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What can I expect to be able to do after 12 weeks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That depends on where you start and where you want to land. From zero AI experience to confidently using AI in your daily work. Or from intermediate to building custom agents and automating workflows. We design the curriculum around your goals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a team version?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 12-week course is built for individuals. If you want to train your whole team, our half-day AI Fluency Workshop is the better fit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this compare to Academy Xi or AIM courses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Academy Xi charges $899 to $3,150 for AI courses with some mentoring. AIM charges $600 to $800 for one to two day short courses. PerformOS is $499 for a full 12-week personalised curriculum built around how you actually learn. No one else offers custom learning styles at this price."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX");
+  </script>
+
+</head>
+<body>
+
+  <nav class="site-nav" id="nav" aria-label="Primary">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand-lockup" aria-label="PerformOS home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+          <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+        </svg>
+        <span class="brand-wordmark">Perform<em>OS</em></span>
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="course.html" class="current">12-Week Course</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="ai-transformation.html">Transformation</a></li>
+        <li><a href="ai-implementation.html">Implementation</a></li>
+        <li><a href="ai-fluency-workshop.html">Workshop</a></li>
+        <li><a href="about.html">Studio</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost btn-sm">Start your plan</a>
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Contact</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>A 12-week AI course<br><em>built around how you learn.</em></h1>
+      <p class="hero-subhead">Personalised curriculum. Your pace. Your style. Your goals. One price.</p>
+      <p class="intro">Most AI courses are built for the average learner. You are not the average learner. You absorb information differently. You have different goals. You are starting from a different place. This course is designed around exactly where you are and exactly how you learn best.</p>
+      <div class="cta-row">
+        <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Book your plan — $499</a>
+        <a href="#compare" class="btn btn-ghost">Compare options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW YOU LEARN -->
+  <section class="section section-alt" id="styles">
+    <div class="wrap">
+      <span class="section-label">Your learning style</span>
+      <h2>Choose how you learn. We build around it.</h2>
+      <p class="section-intro">No two people learn the same way. During your first conversation we identify what works for you. Everything we build for the next 12 weeks follows that format.</p>
+      <div class="styles-grid">
+        <div class="style-card">
+          <div class="style-icon">⏱</div>
+          <h3>20-minute daily</h3>
+          <p>Practical modules delivered in focused sprints. One concept. One exercise. Built into your workday.</p>
+        </div>
+        <div class="style-card">
+          <div class="style-icon">▶</div>
+          <h3>3-minute video</h3>
+          <p>Short, focused video lessons you watch between meetings. One idea per lesson. Immediately applicable.</p>
+        </div>
+        <div class="style-card">
+          <div class="style-icon">📋</div>
+          <h3>Explicit instructions</h3>
+          <p>Step-by-step written guides. Every click documented. Every concept explained in plain English. Work through at your desk.</p>
+        </div>
+        <div class="style-card">
+          <div class="style-icon">🔀</div>
+          <h3>Mixed format</h3>
+          <p>Your combination. Video for concepts. Written for technical steps. Sprints for practice. Whatever works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <span class="section-label">How it works</span>
+      <h2>Four steps. Twelve weeks. One outcome.</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01 Assessment</span>
+          <h3>We talk</h3>
+          <p>A conversation, not a form. Where are you with AI? Where do you want to be? How do you learn best? This shapes everything.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02 Design</span>
+          <h3>We build</h3>
+          <p>Your custom 12-week curriculum. Modules in your preferred format. Paced to your availability. Targeted at your goals.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03 Delivery</span>
+          <h3>You learn</h3>
+          <p>Weekly modules delivered in your format. Check-ins when you want them. Adjustments if something is not working.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">04 Capable</span>
+          <h3>You ship</h3>
+          <p>By week 12 you are building what you set out to build. Custom agents. Automated workflows. Confident daily AI use. Your outcome, delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECTRUM -->
+  <section class="section section-alt" id="spectrum">
+    <div class="wrap">
+      <span class="section-label">Where you land</span>
+      <h2>Start anywhere. Go as far as you want.</h2>
+      <p class="section-intro">Your starting point determines your curriculum. Your ambition determines your finish line.</p>
+      <div class="spectrum">
+        <div class="spec-card">
+          <h3>Starting from zero</h3>
+          <p>You have not used AI beyond maybe asking ChatGPT a question. By week 12 you are confident using AI across your daily work, writing effective prompts, and knowing which tools to reach for. You move from feeling behind to feeling capable.</p>
+        </div>
+        <div class="spec-card spec-high">
+          <h3>Ready to build</h3>
+          <p>You already use AI but want to build. Custom agents that automate your workflows. Webhook connections between your tools. Memory and context that persists across sessions. By week 12 you are shipping working automation, not watching tutorials about it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="section" id="pricing">
+    <div class="wrap-narrow">
+      <span class="section-label">Pricing</span>
+      <h2>One price. Everything included.</h2>
+      <div class="price-block">
+        <div class="price-num">$499</div>
+        <div class="price-detail">
+          <h3>12-week personalised AI adoption course</h3>
+          <p>Custom curriculum. Your format. Your pace. Your outcome. No upsells. No subscriptions. No per-module fees.</p>
+          <ul>
+            <li>Assessment conversation</li>
+            <li>Custom 12-week curriculum</li>
+            <li>All modules in your format</li>
+            <li>Progress check-ins</li>
+            <li>One-time. Owned forever.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="section section-alt" id="compare">
+    <div class="wrap">
+      <span class="section-label">How we compare</span>
+      <h2>You have options. Here is how they stack up.</h2>
+      <p class="section-intro">Most AI courses are either expensive cohort programmes, short one-day workshops, or cheap video libraries with no support. PerformOS is none of those.</p>
+      <div class="comparison">
+        <div class="comp-row comp-header">
+          <span></span>
+          <span>PerformOS</span>
+          <span>Academy Xi</span>
+          <span>AIM</span>
+          <span>Online courses</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Price</span>
+          <span class="comp-win">$499 one-time</span>
+          <span class="comp-meh">$899–$3,150</span>
+          <span class="comp-meh">$600–$800</span>
+          <span class="comp-nope">$15–$59/mo</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Duration</span>
+          <span class="comp-win">12 weeks</span>
+          <span class="comp-meh">6–12 months</span>
+          <span class="comp-nope">1–2 days</span>
+          <span class="comp-nope">Self-paced</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Personalised</span>
+          <span class="comp-win">100% custom</span>
+          <span class="comp-meh">Some mentoring</span>
+          <span class="comp-nope">Off the shelf</span>
+          <span class="comp-nope">None</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Learning format</span>
+          <span class="comp-win">Your choice</span>
+          <span class="comp-meh">Self-paced + mentor</span>
+          <span class="comp-nope">Classroom only</span>
+          <span class="comp-nope">Video only</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Subscription</span>
+          <span class="comp-win">None</span>
+          <span class="comp-win">None</span>
+          <span class="comp-win">None</span>
+          <span class="comp-nope">Yes</span>
+        </div>
+        <div class="comp-row">
+          <span class="comp-label">Built for</span>
+          <span class="comp-win">Individuals who feel behind</span>
+          <span class="comp-meh">Career changers</span>
+          <span class="comp-meh">Managers</span>
+          <span class="comp-nope">Anyone</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap-narrow">
+      <span class="section-label">Frequently asked questions</span>
+      <h2>Straight answers about the course.</h2>
+      <div class="faq-preview">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How is the course personalised to how I learn?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>We start with a conversation. You tell us how you absorb information best: 20-minute daily practical modules, three-minute video lessons, explicit written instructions, or any combination. We design all 12 weeks around that. Nothing is off the shelf. Everything is built for the way your brain actually works.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What can I expect to be able to do after 12 weeks?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>That depends on where you start and where you want to land. If you are coming in with zero AI experience, you will leave confident using AI in your daily work. If you want to build custom agents and automate workflows, we will get you there. We design the curriculum around your goals, so week 12 looks exactly like the outcome you want.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How does this compare to Academy Xi or AIM?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Academy Xi charges $899 to $3,150 for AI courses with some mentoring. AIM charges $600 to $800 for one to two day short courses. We are $499 for a full 12-week personalised curriculum built around how you actually learn. No one else at this price point builds a custom curriculum designed for your specific learning style.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Is there a team version?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>The 12-week course is built for individuals. If you want to train your whole team, our half-day AI Fluency Workshop is the better fit. On-site or remote. Your team leaves with a working AI instrument configured for your actual business.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Can I switch format partway through?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes. If the format is not working, tell us. We adjust. The point of a personalised course is that it adapts to you, not the other way around.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>You are not behind.<br><em>You just need your plan.</em></h2>
+          <p>One conversation. Twelve weeks. Your outcome. $499.</p>
+        </div>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-accent">Book your plan — $499</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="brand-lockup" style="font-size:18px;">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" style="width:22px;height:22px;">
+              <circle cx="32" cy="32" r="30" fill="#0a0a0a"/>
+              <circle cx="32" cy="32" r="16" fill="#d4ff3b"/>
+            </svg>
+            <span class="brand-wordmark">Perform<em>OS</em></span>
+          </div>
+          <p class="foot-tagline">Personalised AI adoption for professionals. 12-week custom plans built around how you learn. From the basics through to custom agents and workflows.</p>
+          <div class="foot-loc">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Based in Australia
+          </div>
+        </div>
+        <div class="foot-col">
+          <h5>Catalogue</h5>
+          <ul>
+            <li><a href="catalogue.html#performlytics">Performlytics</a></li>
+            <li><a href="catalogue.html#pocket-customer">Pocket Customer</a></li>
+            <li><a href="catalogue.html#pulsecheck-360">PulseCheck 360</a></li>
+            <li><a href="catalogue.html#learnos">LearnOS</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="course.html">12-Week Course</a></li>
+            <li><a href="ai-fluency-workshop.html">Fluency Workshops</a></li>
+            <li><a href="ai-implementation.html">Implementation</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a preview</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>&copy; PerformOS . Made in Australia</span>
+        <span>Volume 01 . 2026 . Powering high performance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const onScroll = () => { if (window.scrollY > 8) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answer = btn.nextElementSibling;
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.style.maxHeight = expanded ? '0' : answer.scrollHeight + 'px';
+      });
+    });
+  </script>
+</body>
+</html>
