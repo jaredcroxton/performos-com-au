@@ -63,6 +63,59 @@
 
     h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 10vw, 140px); letter-spacing: -2.5px; line-height: 0.92; color: var(--ink); }
 
+    /* Studio-strip: lightweight catalogue mention, instruments as PROOF not product */
+    .studio-strip h2 { max-width: 720px; }
+    .inst-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      margin-top: 36px;
+      border-top: 1px solid var(--ink-12);
+      border-bottom: 1px solid var(--ink-12);
+      list-style: none; padding: 0;
+    }
+    .inst-strip li {
+      padding: 22px 20px;
+      border-left: 1px solid var(--ink-12);
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .inst-strip li:first-child { border-left: none; padding-left: 0; }
+    .inst-strip .strip-dot {
+      flex: 0 0 6px; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
+      margin-top: 8px;
+    }
+    .inst-strip a {
+      display: flex; flex-direction: column; gap: 4px;
+      transition: opacity .15s ease;
+    }
+    .inst-strip a:hover { opacity: .65; }
+    .inst-strip strong {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 19px; letter-spacing: -0.3px;
+      color: var(--ink);
+    }
+    .inst-strip em {
+      font-style: normal;
+      font-family: var(--mono); font-size: 10.5px;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--ink-40);
+    }
+    .strip-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 28px;
+      font-family: var(--mono); font-size: 12px;
+      letter-spacing: 1.4px; text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--ink-12);
+      padding-bottom: 4px;
+      transition: border-color .15s ease;
+    }
+    .strip-cta:hover { border-color: var(--accent); }
+    @media (max-width: 720px) {
+      .inst-strip { grid-template-columns: 1fr 1fr; }
+      .inst-strip li:nth-child(3) { border-left: none; padding-left: 0; }
+      .inst-strip li { padding: 18px 14px; }
+    }
+
     /* Selection-style marker highlight (flat lime band, no skew) for emphasis phrases like 'Your plan' */
     .mark {
       background: var(--accent);
@@ -681,8 +734,8 @@
       <div class="hero-main">
         <div class="hero-text">
           <span class="hero-eyebrow">A 12-week custom AI plan . For individuals</span>
-          <h1>Built around<br>how you<br>work in <span class="highlight">your role.</span></h1>
-          <p class="hero-subhead">Lift your AI capability in your actual job. Custom curriculum, your pace, your tools. Works no matter what your team uses.</p>
+          <h1>Custom-built<br>for <span class="highlight">Performance.</span></h1>
+          <p class="hero-subhead">A 12-week AI plan built around your role, how you learn, and where you actually work. Lift your capability in your job. One price. Yours forever.</p>
           <div class="cta-row">
             <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Start your 12-week plan</a>
             <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
@@ -781,15 +834,15 @@
     </div>
   </section>
 
-  <!-- STATS ROW — proof in numbers -->
+  <!-- STATS ROW — the 12-week plan in numbers -->
   <section class="stats-row">
     <div class="wrap">
-      <div class="stats-eyebrow reveal">By the numbers</div>
+      <div class="stats-eyebrow reveal">The plan in numbers</div>
       <div class="stats-grid reveal-stagger">
-        <div class="stat"><span class="stat-num">04</span><span class="stat-label">Instruments shipping live. Built by an operator, used by operators.</span></div>
-        <div class="stat"><span class="stat-num">84<em>%</em></span><span class="stat-label">Average script adherence after two weeks of Pocket Customer.</span></div>
-        <div class="stat"><span class="stat-num">3<em>×</em></span><span class="stat-label">Faster rep ramp-up to quota for teams running Pocket Customer.</span></div>
-        <div class="stat"><span class="stat-num"><em>&lt;</em>1 wk</span><span class="stat-label">From upload to measurable uplift. Working preview in seven days, free.</span></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weeks. Custom curriculum, built around your role and how you learn.</span></div>
+        <div class="stat"><span class="stat-num"><em>$</em>499</span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
+        <div class="stat"><span class="stat-num">04</span><span class="stat-label">Learning modes. Sprints, video, written, live conversation. Pick what fits you.</span></div>
+        <div class="stat"><span class="stat-num"><em>∞</em></span><span class="stat-label">Yours forever. The plan, the materials, the agents you build. No lock-in.</span></div>
       </div>
     </div>
   </section>
@@ -829,37 +882,18 @@
   </section>
 
   <!-- CATALOGUE -->
-  <section class="section" id="catalogue">
+  <section class="section studio-strip" id="catalogue">
     <div class="wrap">
-      <span class="section-label">The catalogue</span>
-      <h2>Four instruments. All <span class="mark">live</span> and shipping.</h2>
-      <p class="section-intro">Each solves one specific operational problem. Each ships with a seven-day free preview and a single purchase price. No seat fees. No update invoices. No vendor lock-in.</p>
-      <div class="instruments">
-        <div class="inst-card">
-          <div><span class="inst-num">01</span><span class="inst-status"><span class="dot"></span>Live</span></div>
-          <h3>Performlytics</h3>
-          <p>An AI operator for business intelligence. Upload a spreadsheet, connect your stack, ask a question. Performlytics reads your data, builds the dashboard, and writes the insight faster than any analyst. For founders, CFOs, and RevOps leads who currently type "can you pull a quick report" in Slack.</p>
-          <a href="catalogue.html#performlytics" class="inst-link">See Performlytics</a>
-        </div>
-        <div class="inst-card">
-          <div><span class="inst-num">02</span><span class="inst-status"><span class="dot"></span>Live</span></div>
-          <h3>Pocket Customer</h3>
-          <p>A voice-first AI sales coach that rides along on every call. It listens live, catches the moment a rep drifts off script, and whispers a nudge before the deal slips. Your team gets unlimited reps without burning a single lead. For sales leaders who know the cost of a bad call.</p>
-          <a href="catalogue.html#pocket-customer" class="inst-link">See Pocket Customer</a>
-        </div>
-        <div class="inst-card">
-          <div><span class="inst-num">03</span><span class="inst-status"><span class="dot"></span>Live</span></div>
-          <h3>PulseCheck 360</h3>
-          <p>A three-minute weekly check-in that turns team sentiment into organisational intelligence. Detects flight risk before it becomes attrition. Generates draft one-on-one prompts so the manager walks into the conversation already informed. For team leads who want to see it before they say it.</p>
-          <a href="catalogue.html#pulsecheck-360" class="inst-link">See PulseCheck 360</a>
-        </div>
-        <div class="inst-card">
-          <div><span class="inst-num">04</span><span class="inst-status"><span class="dot"></span>Live</span></div>
-          <h3>LearnOS</h3>
-          <p>A custom learning management system. Fixed price. Owned forever. Upload a PowerPoint, get a course. Real-time completion and score tracking. Bulk enrol operators in 30 seconds. For L&D managers tired of paying monthly to update their own content.</p>
-          <a href="catalogue.html#learnos" class="inst-link">See LearnOS</a>
-        </div>
-      </div>
+      <span class="section-label">The studio behind the plan</span>
+      <h2>Built by an operator who ships.</h2>
+      <p class="section-intro">The 12-week plan is not theory. It is the same thinking and the same instruments behind four live products used by real operators. You learn to think and ship the way the studio does.</p>
+      <ul class="inst-strip">
+        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#performlytics"><strong>Performlytics</strong><em>AI business intelligence</em></a></li>
+        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#pocket-customer"><strong>Pocket Customer</strong><em>Voice-first sales coach</em></a></li>
+        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#pulsecheck-360"><strong>PulseCheck 360</strong><em>Team sentiment intelligence</em></a></li>
+        <li><span class="strip-dot" aria-hidden="true"></span><a href="catalogue.html#learnos"><strong>LearnOS</strong><em>Custom LMS, owned forever</em></a></li>
+      </ul>
+      <a href="catalogue.html" class="strip-cta">Browse the full catalogue <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
