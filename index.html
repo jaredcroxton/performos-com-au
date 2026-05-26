@@ -100,6 +100,7 @@
     .hero { padding: 80px 0 56px; }
     .hero h1 { max-width: 900px; }
     .hero .intro { font-size: 18px; color: var(--ink-60); line-height: 1.6; margin-top: 24px; max-width: 620px; }
+    .hero .hero-subhead { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1.2; margin-top: 20px; max-width: 720px; }
     .hero .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
     /* SECTION */
@@ -114,6 +115,7 @@
     .lane:hover { border-color: var(--ink-40); }
     .lane h3 { font-size: 22px; margin-bottom: 10px; }
     .lane p { font-size: 15px; color: var(--ink-60); line-height: 1.6; }
+    .lane .lane-lead { font-weight: 600; color: var(--ink); }
     .lane .lane-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 14px; font-weight: 500; color: var(--ink); }
 
     /* INSTRUMENT GRID */
@@ -199,6 +201,7 @@
       .hero { padding: 48px 0 32px; }
       .hero h1 { font-size: 36px; }
       .hero .intro { font-size: 16px; }
+      .hero .hero-subhead { font-size: 18px; }
       .section { padding: 48px 0; }
       .lanes { grid-template-columns: 1fr; gap: 16px; }
       .instruments { grid-template-columns: 1fr; gap: 16px; }
@@ -293,7 +296,9 @@
   <section class="hero">
     <div class="wrap">
       <h1>Practical AI adoption<br><em>for small businesses.</em></h1>
-      <p class="intro">We don't build platforms. We build instruments. Small, precise pieces of software that remove a specific kind of friction. Try free. Buy once. Own forever.</p>
+      <p class="hero-subhead">We turn up. We train your team. We redesign your workflows. We ship the instruments.</p>
+      <p class="intro">Most small businesses do not need another software subscription. They need someone who shows up, understands how they actually work, and builds something that removes friction from their operation. That is what PerformOS does.</p>
+      <p style="font-size:15px;color:var(--ink-60);margin-top:16px;max-width:620px;">Three ways to work with us. All of them start with a conversation, not a demo.</p>
       <div class="cta-row">
         <a href="catalogue.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Browse the catalogue</a>
         <a href="contact.html" class="btn btn-ghost">Book a call</a>
@@ -306,21 +311,21 @@
     <div class="wrap">
       <span class="section-label">Three ways to work with us</span>
       <h2>Learn. Implement. Use.</h2>
-      <p class="section-intro">Pick the path that fits where your business is right now. No consulting decks. No change-management circus. Just focused instruments that perform.</p>
+      <p class="section-intro">All three start with a conversation, not a demo. Pick the path that fits where your business is right now.</p>
       <div class="lanes">
         <div class="lane">
           <h3>Learn</h3>
-          <p>AI fluency for small business operators. A structured curriculum that teaches you what AI can actually do for your business, what it cannot, and how to build the instinct for which is which. Delivered through LearnOS, our custom learning instrument.</p>
-          <a href="ai-fluency-workshop.html" class="lane-link">Start learning</a>
+          <p><span class="lane-lead">We train your team.</span> Half-day AI Fluency Workshop. On-site in Sydney, Melbourne, or Brisbane. Remote Australia-wide. Your team leaves with a working AI instrument configured for your actual business, not a demo environment. One price. No ongoing fees.</p>
+          <a href="ai-fluency-workshop.html" class="lane-link">Book the workshop</a>
         </div>
         <div class="lane">
           <h3>Implement</h3>
-          <p>Four-week AI implementation sprints. Fixed scope. Fixed price. Your team walks away with a working AI instrument, not a slide deck. This is how most operators start: one sprint, one instrument, one problem solved.</p>
+          <p><span class="lane-lead">We redesign your workflows.</span> Four-week implementation sprint. Fixed scope. Fixed price. We map your operation, identify the highest-friction tasks, build the instruments, and ship them into production. Your team walks away with working AI, not a slide deck.</p>
           <a href="ai-implementation.html" class="lane-link">Book a sprint</a>
         </div>
         <div class="lane">
           <h3>Use</h3>
-          <p>Deploy a PerformOS instrument inside your business. Each one is built for a single operational job. Upload your data, configure your settings, and run. No integration tax. Just software that performs.</p>
+          <p><span class="lane-lead">We ship instruments you own.</span> Four focused pieces of software. Each does one job surgically. Try free for seven days. Buy once. Own forever. No monthly subscriptions. No per-seat pricing. No vendor lock-in.</p>
           <a href="catalogue.html" class="lane-link">Browse the catalogue</a>
         </div>
       </div>
@@ -337,19 +342,19 @@
         <div class="inst-card">
           <div><span class="inst-num">01</span><span class="inst-status"><span class="dot"></span>Live</span></div>
           <h3>Performlytics</h3>
-          <p>An AI operator for business intelligence. Upload a spreadsheet, connect your stack, ask a question. Performlytics reads your data, builds the dashboard, and writes the insight faster than any analyst. For founders, CFOs, and RevOps leads.</p>
+          <p>An AI operator for business intelligence. Upload a spreadsheet, connect your stack, ask a question. Performlytics reads your data, builds the dashboard, and writes the insight faster than any analyst. For founders, CFOs, and RevOps leads who currently type "can you pull a quick report" in Slack.</p>
           <a href="catalogue.html#performlytics" class="inst-link">See Performlytics</a>
         </div>
         <div class="inst-card">
           <div><span class="inst-num">02</span><span class="inst-status"><span class="dot"></span>Live</span></div>
           <h3>Pocket Customer</h3>
-          <p>A voice-first AI sales coach that rides along on every call. It listens live, catches the moment a rep drifts off script, and whispers a nudge before the deal slips. Unlimited reps without burning a single lead.</p>
+          <p>A voice-first AI sales coach that rides along on every call. It listens live, catches the moment a rep drifts off script, and whispers a nudge before the deal slips. Your team gets unlimited reps without burning a single lead. For sales leaders who know the cost of a bad call.</p>
           <a href="catalogue.html#pocket-customer" class="inst-link">See Pocket Customer</a>
         </div>
         <div class="inst-card">
           <div><span class="inst-num">03</span><span class="inst-status"><span class="dot"></span>Live</span></div>
           <h3>PulseCheck 360</h3>
-          <p>A three-minute weekly check-in that turns team sentiment into organisational intelligence. Detects flight risk before it becomes attrition. Generates draft one-on-one prompts so the manager walks into the conversation already informed.</p>
+          <p>A three-minute weekly check-in that turns team sentiment into organisational intelligence. Detects flight risk before it becomes attrition. Generates draft one-on-one prompts so the manager walks into the conversation already informed. For team leads who want to see it before they say it.</p>
           <a href="catalogue.html#pulsecheck-360" class="inst-link">See PulseCheck 360</a>
         </div>
         <div class="inst-card">
