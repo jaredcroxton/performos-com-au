@@ -72,6 +72,162 @@
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
+
+    /* ─────────────────────────────────────────────
+       World-class additions (Editorial / Linear / Vercel-inspired)
+       Palette unchanged. Pure layout + motion + texture.
+       ───────────────────────────────────────────── */
+
+    /* 01. Subtle paper-grain overlay for material feel */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .42 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      opacity: 0.07; mix-blend-mode: multiply;
+      pointer-events: none; z-index: 1;
+    }
+    nav.site-nav, section, footer { position: relative; z-index: 2; }
+
+    /* 02. Manifesto pull-quote section — billboard moment on Ink */
+    .manifesto {
+      background: var(--ink); color: var(--ivory);
+      padding: 96px 0; position: relative; overflow: hidden;
+    }
+    .manifesto .wrap { position: relative; }
+    .manifesto-eyebrow {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 32px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .manifesto-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1px; background: var(--accent);
+    }
+    .manifesto-quote {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(40px, 5.6vw, 88px);
+      line-height: 0.98; letter-spacing: -2px;
+      color: var(--ivory);
+      max-width: 1000px;
+    }
+    .manifesto-quote em {
+      font-style: italic; color: var(--accent);
+    }
+    .manifesto-attrib {
+      margin-top: 40px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      color: rgba(242,239,232,.45);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .manifesto-attrib::before {
+      content: ''; display: inline-block;
+      width: 40px; height: 1px; background: rgba(242,239,232,.25);
+    }
+
+    /* 03. Stats row — big serif numbers */
+    .stats-row {
+      padding: 80px 0 88px;
+      border-top: 1px solid var(--ink-12);
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .stats-eyebrow {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--ink-40); margin-bottom: 40px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .stats-eyebrow::before {
+      content: ''; flex: 0 0 24px; height: 1px; background: var(--ink-40);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat {
+      padding: 0 24px;
+      border-left: 1px solid var(--ink-12);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .stat:first-child { border-left: none; padding-left: 0; }
+    .stat-num {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(56px, 7vw, 96px);
+      line-height: 0.92; letter-spacing: -3px;
+      color: var(--ink);
+    }
+    .stat-num em { font-style: italic; color: var(--accent); }
+    .stat-label {
+      font-size: 13.5px; color: var(--ink-60);
+      line-height: 1.45;
+      max-width: 200px;
+    }
+
+    /* 04. Magazine-style section divider */
+    .mag-rule {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 24px; align-items: center;
+      padding: 0 40px;
+    }
+    .mag-rule::before, .mag-rule::after {
+      content: ''; height: 1px; background: var(--ink-12);
+    }
+    .mag-rule span {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    /* 05. Scroll-reveal — fade up on entry */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.6,.2,1), transform .8s cubic-bezier(.2,.6,.2,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+    .reveal-stagger.in > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0ms; }
+    .reveal-stagger.in > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 80ms; }
+    .reveal-stagger.in > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 160ms; }
+    .reveal-stagger.in > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 240ms; }
+    .reveal-stagger.in > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+    .reveal-stagger.in > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
+
+    /* 06. Magnetic CTA — lime button pulls toward cursor */
+    .magnetic { transition: transform .15s cubic-bezier(.2,.6,.2,1); will-change: transform; }
+
+    /* 07. Hero text: subtle staggered reveal on load */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1, .hero .cta-row { animation: fade-up .9s cubic-bezier(.2,.6,.2,1) both; }
+    .hero h1 { animation-delay: .1s; }
+    .hero .cta-row { animation-delay: .4s; }
+
+    /* 08. Better section header rhythm */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 18px; height: 1px; background: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .manifesto { padding: 64px 0; }
+      .manifesto-quote { font-size: clamp(32px, 9vw, 48px); letter-spacing: -1.4px; }
+      .stats-row { padding: 48px 0; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+      .stat { padding: 0 16px; }
+      .stat:nth-child(3) { border-left: none; padding-left: 0; }
+      .stat-num { font-size: clamp(44px, 12vw, 64px); }
+      body::after { opacity: 0.04; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+      .hero h1, .hero .cta-row { animation: none !important; }
+      .magnetic { transform: none !important; }
+    }
     h1 em { font-style: italic; color: var(--ink-40); }
     h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.5px; line-height: 1.08; }
     h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.3px; line-height: 1.15; }
@@ -601,6 +757,33 @@
     </div>
   </section>
 
+  <!-- MANIFESTO — billboard moment -->
+  <section class="manifesto">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="manifesto-eyebrow">The studio principle</span>
+        <h2 class="manifesto-quote">We don't build platforms.<br>We build <em>instruments.</em></h2>
+        <div class="manifesto-attrib">PerformOS . An AI software studio . Australia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS ROW — proof in numbers -->
+  <section class="stats-row">
+    <div class="wrap">
+      <div class="stats-eyebrow reveal">By the numbers</div>
+      <div class="stats-grid reveal-stagger">
+        <div class="stat"><span class="stat-num">04</span><span class="stat-label">Instruments shipping live. Built by an operator, used by operators.</span></div>
+        <div class="stat"><span class="stat-num">84<em>%</em></span><span class="stat-label">Average script adherence after two weeks of Pocket Customer.</span></div>
+        <div class="stat"><span class="stat-num">3<em>×</em></span><span class="stat-label">Faster rep ramp-up to quota for teams running Pocket Customer.</span></div>
+        <div class="stat"><span class="stat-num"><em>&lt;</em>1 wk</span><span class="stat-label">From upload to measurable uplift. Working preview in seven days, free.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazine-style rule between proof and product -->
+  <div class="mag-rule"><span>The Catalogue</span></div>
+
   <!-- HOW IT WORKS + LANES -->
   <section class="section section-alt" id="how-it-works">
     <div class="wrap">
@@ -857,6 +1040,51 @@
       }
       applyMode();
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) requestAnimationFrame(tick);
+    })();
+
+    // Scroll-reveal: auto-tag every section heading + card cluster, fade-up on entry
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      // Auto-tag: every h2/h3 in section gets .reveal; grid containers get .reveal-stagger
+      document.querySelectorAll('section.section h2, section.section .section-intro, section.section .section-label, section.manifesto > .wrap > div, section.stats-row .stats-eyebrow').forEach(el => {
+        if (!el.classList.contains('reveal') && !el.classList.contains('reveal-stagger')) el.classList.add('reveal');
+      });
+      document.querySelectorAll('.lanes, .instruments, .stats-grid, .foot-grid').forEach(el => {
+        el.classList.add('reveal-stagger');
+      });
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+    })();
+
+    // Magnetic CTA: lime/featured buttons subtly pull toward the cursor
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const buttons = document.querySelectorAll('.btn-accent, .btn-with-dot');
+      buttons.forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = (e.clientX - cx) * 0.25;
+          const dy = (e.clientY - cy) * 0.25;
+          btn.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate(0, 0)';
+        });
+      });
     })();
   </script>
 </body>
