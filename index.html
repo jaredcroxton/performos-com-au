@@ -242,6 +242,50 @@
        ──────────────────────────────────────────────── */
     .hero-main { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
     .hero-text { max-width: 560px; }
+
+    /* Studio meta row at top of hero */
+    .hero-meta {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 24px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 48px;
+    }
+    .hero-meta .meta-l { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta .meta-l .accent-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);
+    }
+    .hero-meta .meta-r { position: relative; text-align: right; }
+    .hero-meta .meta-r .studio-num {
+      display: block;
+      font-family: var(--serif); font-size: clamp(80px, 11vw, 160px);
+      letter-spacing: -4px; line-height: 0.85;
+      color: var(--ink-12); margin-top: 4px;
+      pointer-events: none; user-select: none;
+    }
+
+    /* Highlighter swipe through the "Perform." word */
+    .hero h1 .highlight {
+      position: relative;
+      display: inline-block;
+      font-style: italic;
+      padding: 0 4px;
+      z-index: 0;
+    }
+    .hero h1 .highlight::before {
+      content: '';
+      position: absolute;
+      left: -4px; right: -4px;
+      top: 58%; bottom: 8%;
+      background: var(--accent);
+      transform: skewX(-3deg);
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    /* Legacy kinetic word swap (unused now but kept in case of revival) */
     .hero h1 .kinetic { display: inline-block; min-width: 280px; position: relative; vertical-align: baseline; }
     .hero h1 .kinetic em { position: absolute; left: 0; bottom: 0; font-style: italic; color: var(--ink); opacity: 0; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; white-space: nowrap; }
     .hero h1 .kinetic em.active { opacity: 1; transform: translateY(0); position: relative; }
@@ -457,15 +501,21 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
+      <div class="hero-meta">
+        <span class="meta-l"><span class="accent-dot" aria-hidden="true"></span>Operating . Est. 2025 . Jared Croxton . Founder</span>
+        <span class="meta-r">
+          Volume . Studio No.
+          <span class="studio-num" aria-hidden="true">01</span>
+        </span>
+      </div>
+
       <div class="hero-main">
         <div class="hero-text">
-          <h1>AI is moving fast.<br><em>You do not have to get left behind.</em></h1>
-          <p class="hero-subhead">A 12-week plan. Built around how you learn. From the basics through to custom agents and workflows. Everything to your pace, your style, your goals.</p>
-          <p class="intro">If you learn best in 20-minute daily sprints, that is what you get. If three minutes at a time through video works better, that is the plan. If you want explicit step-by-step instructions, they are written for you. One price. Your curriculum. Your speed.</p>
-          <p style="font-size:15px;color:var(--ink-60);margin-top:16px;">Every plan starts with a conversation, not a form.</p>
+          <h1>Software that<br>makes teams<br><span class="highlight">Perform.</span></h1>
+          <p class="hero-subhead">We turn up. We train your team. We redesign your workflows. We ship the instruments.</p>
           <div class="cta-row">
-            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Book your 12-week plan — $499</a>
-            <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+            <a href="contact.html" class="btn-with-dot"><span class="live" aria-hidden="true"></span>Book a call</a>
+            <a href="catalogue.html" class="btn btn-ghost">Browse the catalogue</a>
           </div>
         </div>
 
