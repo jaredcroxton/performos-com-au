@@ -461,6 +461,18 @@
     /* SECTION */
     .section { padding: 72px 0; }
     .section-alt { background: var(--ivory-soft); }
+
+    /* Dark section variant — Ink background, ivory text. Used by the commercial-model band. */
+    .section-dark {
+      background: var(--ink); color: var(--ivory);
+      position: relative;
+    }
+    .section-dark .section-label { color: var(--accent); }
+    .section-dark .section-label::before { background: var(--accent); }
+    .section-dark h2 { color: var(--ivory); }
+    .section-dark h2 em { color: rgba(242,239,232,.42); }
+    .section-dark p { color: rgba(242,239,232,.72); }
+    .section-dark .section-intro { color: rgba(242,239,232,.72); }
     .section-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-40); margin-bottom: 12px; }
     .section-intro { font-size: 17px; color: var(--ink-60); line-height: 1.6; margin-top: 14px; max-width: 620px; }
 
@@ -1007,7 +1019,7 @@
         <div class="stat"><span class="stat-num">12</span><span class="stat-label">Weeks. Custom curriculum, built around your role and how you learn.</span></div>
         <div class="stat"><span class="stat-num"><span class="accent-glyph">$</span>499</span><span class="stat-label">One price. No subscriptions, no per-module fees, no upsells.</span></div>
         <div class="stat"><span class="stat-num">04</span><span class="stat-label">Learning modes. Sprints, video, written, live conversation. Pick what fits you.</span></div>
-        <div class="stat"><span class="stat-num"><em>∞</em></span><span class="stat-label">Yours forever. The plan, the materials, the agents you build. No lock-in.</span></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Yours forever. The plan, the materials, the agents you build. No lock-in.</span></div>
       </div>
     </div>
   </section>
@@ -1095,7 +1107,7 @@
   </section>
 
   <!-- COMMERCIAL MODEL -->
-  <section class="section section-alt" id="model">
+  <section class="section section-dark" id="model">
     <div class="wrap">
       <div class="commercial">
         <div>
